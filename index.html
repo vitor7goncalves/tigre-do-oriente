@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
     <title>Tigre do Oriente</title>
     <style>
         *{
@@ -12,13 +13,57 @@
         @font-face {
             font-family: dream;
             src:  local(dream\ orphans), url(assets/font/dream_orphans/dream\ orphans.ttf);
-}
+        }
+        @font-face {
+            font-family: poetsen;
+            src:  local(dream\ orphans), url(assets/font/poetsen_one/PoetsenOne-Regular.ttf);
+        }
+
+        .active{
+            animation: onActive 2s;
+            visibility: visible;
+            opacity: 1;
+        }
+        @keyframes onActive{
+           0%{
+            visibility: hidden;
+            opacity: 0;
+            }
+           100%{
+                visibility: visible;
+                opacity: 1;
+           }
+        }
+        .inactive{
+           animation: onInactive 2s;
+           visibility: hidden;
+           opacity: 0;
+        }
+        @keyframes onInactive{
+            0%{
+            visibility: visible;
+            opacity: 1;
+            }
+           100%{
+                visibility: hidden;
+                opacity: 0;
+           }
+        }
+        .activeButton{
+            width: 55px; 
+            height: 55px;
+            transform: rotate(180deg)
+        }
+        .inactiveButton{
+            width: 40px; 
+            height: 40px;
+            transform: rotate(0deg)
+        }
+
         a{
             text-decoration: none;
             text-transform: uppercase;
             color: #DAA520;
-            
-            
         }
         .navbar{
             display: flex;
@@ -26,31 +71,108 @@
         }
         .navbar a{
             font-family: dream;
-            font-size: 15px;
+            font-size: 17px;
+        }
+        button{
+            cursor: pointer;
+        }
+        #imgButton{
+            transition: all 1s;
+        }
+
+        h1{
+            font-family: poetsen;
+            text-shadow: 2px 4px 2px rgba(0, 0, 0, .8);
         }
     </style>
 </head>
 <body>
-    
-<header class="container" style="width: 100%; height: 100vh;">
+    <div id="app">
+        <header class="container" style="width: 100%; height: 100vh;">
 
-<div class="navbar" style="width: 100%; height: 60px;background-color: rgb(0, 0, 0, 0.7); position: absolute; z-index: 2;">
- <a href=""><img src="assets/img/logo.png" alt="" style="width: 60px; height: 50px; margin-left: 50px; margin-top: 5px;"></a>
- <a href="" style="margin: 50px; ">Sobre</a>
- <a href="" style="margin-right: 50px ">Estilos</a>
- <a href="" style="margin-right: 50px; ">Eventos</a>
- <a href="" style="margin-left: 700px; ">Contato</a>
-</div>
+            <div class="navbar" style="width: 100%; height: 60px;background-color: rgb(0, 0, 0, 0.7); position: absolute; z-index: 2;">
+                <a href=""><img src="assets/img/logo.png" alt="" style="width: 60px; height: 50px; margin-left: 50px; margin-top: 5px;"></a>
+                <a href="" style="margin: 50px; ">Sobre</a>
+                <a href="" style="margin-right: 50px ">Estilos</a>
+                <a href="" style="margin-right: 50px; ">Eventos</a>
+                <a href="" style="margin-left: 600px; ">Mestre</a>
+                <a href="" style="margin-left: 50px; ">Contato</a>
+           </div>
+      
+         <div class="banner">
+         
+                  <img src="assets/img/background-img-header.png" alt="" style="width: 100%;height: 500px;">
+                  <h1 style="width: 70%; height: 33rem; position: absolute; z-index: 2; left: 210px; top: 110px; color: #DAA520;">Estilo shaolin Sul</h1>
+               <div  :class="showBanner">
+                      <img src="assets/img/fundo_dragao.png" alt="" style="width: 70%; height: 33rem; position: absolute; right: 100px;top: 150px;">
+                      <img src="assets/img/palavra dragao.png" alt="" style="width: 300px; height: 400px; position: absolute; left: 180px;top: 150px;">
+              </div>
+              <div :class="showBanner2">
+                       <img src="assets/img/fundo_tigre.png" alt="" style="width: 70%; height: 33rem; position: absolute; right: 100px;top: 150px;">
+                       <img src="assets/img/palavra tigre.png" alt="" style="width: 300px; height: 400px; position: absolute; left: 180px;top: 150px;">
+               </div>
+                  <img src="assets/img/barra.png" style="position: absolute; top: 150px; left: 0px; height: 550px; width: 250px;" alt="">
+                  <button  style="width: 40px; height: 40px; position: absolute; left: 20px; top: 250px; opacity: 0; z-index: 2;" @click="onClick()" ></button><img id="imgButton" :class="rotate1" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px; top: 250px;">
+                  <button  style="width: 40px; height: 40px; position: absolute; left: 20px; top: 320px; opacity: 0; z-index: 2;" @click="onClick2()"></button><img id="imgButton" :class="rotate2" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px; top: 320px;">
+                  <button style="width: 40px; height: 40px; position: absolute; left: 20px; top: 390px; opacity: 0; z-index: 2;"></button><img id="imgButton" :class="rotate3" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px; top: 390px; ">
+                  <button style="width: 40px; height: 40px; position: absolute; left: 20px; top: 460px; opacity: 0; z-index: 2;"></button><img id="imgButton" :class="rotate3" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px; top: 460px;">
+          
+          </div>
+    </div>
 
-<div class="banner">
-    <img src="assets/img/background-img-header.png" alt="" style="width: 100%;height: 500px;">
-    <img src="assets/img/fundo_header_aquarela.png" alt="" style="width: 85%; height: 40rem; position: absolute; right: 50px;top: 70px;">
-    <button style="width: 40px; height: 40px; position: absolute; left: 40px; top: 200px; border: none; border-radius: 50%;"><img src="assets/img/Taichi.png" alt="" style="width: 40px;"></button>
-    <button style="width: 40px; height: 40px; position: absolute; left: 40px; top: 270px; border: none; border-radius: 50%;"><img src="assets/img/Taichi.png" alt="" style="width: 40px; "></button>
-    <button style="width: 40px; height: 40px; position: absolute; left: 40px; top: 340px; border: none; border-radius: 50%;"><img src="assets/img/Taichi.png" alt="" style="width: 40px;"></button>
-    <button style="width: 40px; height: 40px; position: absolute; left: 40px; top: 410px; border: none; border-radius: 50%;"><img src="assets/img/Taichi.png" alt="" style="width: 40px; "></button>
-</div>
 
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+<script>
+    new Vue({
+        el: '#app',
+       
+        data: {
+            time: "tigre",
+            showBanner: "active",
+            showBanner2: "inactive",
+            rotate1: "activeButton",
+            rotate2: "inactiveButton",
+            rotate3: "inactiveButton",
+        },
+        
+        methods: {
+           onClick(){
+              this.showBanner = "active"
+              this.showBanner2 = "inactive"
+              this.rotate1 = "activeButton"
+              this.rotate2= "inactiveButton"
+             
+           },
+
+           onClick2(){
+              this.showBanner = "inactive"
+              this.showBanner2 = "active"
+              this.rotate1 = "inactiveButton"
+              this.rotate2= "activeButton"
+              
+           },
+           
+        },
+
+        created() {
+            var vm = this;
+            if(this.time === "tigre"){
+            setInterval(function(){
+               vm.onClick2()
+            }, 5000)
+            this.time = "dragao"
+            }
+            if(this.time === "dragao"){
+            setInterval(function(){
+               vm.onClick()
+            }, 10000)
+            this.time = "tigre"
+           }
+        },
+
+})
+
+</script>
 </header>
 
 </body>
