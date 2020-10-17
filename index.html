@@ -96,6 +96,21 @@
             text-transform: uppercase;
             color: #DAA520;
         }
+        .navbar a:hover{
+            color: #ffffff;
+        }
+        .navbar p{
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #DAA520;
+            cursor: pointer;
+            font-family: dream;
+            font-size: 17px;
+        }
+
+        .navbar p:hover{
+            color: #ffffff;
+        }
         .navbar{
             display: flex;
             align-items: center;
@@ -104,8 +119,48 @@
             font-family: dream;
             font-size: 17px;
         }
+        .arrow{
+            border-top: 7px solid #DAA520; 
+            border-left: 7px solid transparent;  
+            border-right: 7px solid transparent;
+            margin-right: 35px;
+            margin-left: 7px;
+            z-index: 5;
+        }
+        .arrow-right{
+            position: absolute;
+            top: 90px;
+            right: 15px;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 6px solid #DAA520;
+            z-index: 5;
+}
+
         button{
             cursor: pointer;
+        }
+        .painel-1, .painel-2, .painel-3, .painel-4{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .painel-btn{
+            font-family: dream;
+            font-size: 17px;
+            color: #DAA520;
+            z-index: 4;
+            width: 100%;
+            height: 30px;
+            background-color: rgb(0, 0, 0, 0.3);
+            border: none;
+            border-bottom: 0.1px solid rgba(218, 165, 32, .3);
+        }
+        .painel-btn:hover{
+            background-color: rgba(255, 255, 255, .3);
         }
         #imgButton{
             transition: all 1s;
@@ -121,13 +176,33 @@
     <div id="app">
         <header class="container" style="width: 100%; height: 100vh;">
 
-            <div class="navbar" style="width: 100%; height: 60px;background-color: rgb(0, 0, 0, 0.7); position: absolute; z-index: 2;">
+            <div class="navbar" style="width: 100%; height: 60px;background-color: rgb(0, 0, 0, 0.7); position: absolute; z-index: 5;">
                 <a href=""><img src="assets/img/logo.png" alt="" style="width: 60px; height: 50px; margin-left: 50px; margin-top: 5px;"></a>
-                <a href="" style="margin: 50px; ">Sobre</a>
-                <a href="" style="margin-right: 50px ">Estilos</a>
-                <a href="" style="margin-right: 50px; ">Eventos</a>
+                <p href="" style="margin-left: 50px; ">Sobre</p><div class="arrow"></div>
+                <p href="" >Estilos</p><div class="arrow"></div>
+                <p href="" >Eventos</p><div class="arrow"></div>
                 <a href="" style="margin-left: 600px; ">Mestre</a>
-                <a href="" style="margin-left: 50px; ">Contato</a>
+                <p href="" style="margin-left: 50px; ">Contato</p><div class="arrow"></div>
+           </div>
+
+           <div style="position: absolute; width: 100%;">
+                <div  class="painel-1" style="position: absolute; z-index: 3; left: 140px; top: 0px; width: 250px; height: 250px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;" >
+                        <button class=" painel-btn" style="margin-top: 80px;"> Associação Tigre do Oriente</button>
+                        <button class=" painel-btn" style="margin-top: 7px;"> Kung-Fu </button>
+                </div>     
+                <div class="painel-2"  style="position: absolute; z-index: 3; left: 240px; top: 0px; width: 250px; height: 190px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">                 
+                    <button class=" painel-btn" style="margin-top: 80px;"> Shaolin Sul <div class="arrow-right"></div> </button>
+                </div>        
+                <div class="painel-3" style="position: absolute; z-index: 3; left: 340px; top: 0px; width: 250px; height: 350px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">
+                    <button class=" painel-btn" style="margin-top: 80px;"> Palestras </button>
+                    <button class=" painel-btn" style="margin-top: 7px;"> Torneios </button>   
+                    <button class=" painel-btn" style="margin-top: 7px;"> Exibições </button>
+                </div>  
+                <div class="painel-4" style="position: absolute; z-index: 3; right: 70px; top: 0px; width: 250px; height: 350px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">
+                    <button class=" painel-btn" style="margin-top: 80px;"><img style="width: 40px; position: absolute; top: 70px; left: 40px;" src="assets/img/icon-facebook.png" alt=""> Facebook </button>
+                    <button class=" painel-btn" style="margin-top: 7px;"><img style="width: 40.5px; position: absolute; top: 111px; left: 40px;" src="assets/img/icon-insta.png" alt=""> Instagram </button>   
+                    <button class=" painel-btn" style="margin-top: 7px;"><img style="width: 30px; position: absolute; top: 150px; left: 45px;" src="assets/img/icon-whatsapp.png" alt=""> Whatsapp </button>
+                </div>    
            </div>
       
          <div class="banner">
@@ -143,7 +218,7 @@
                        <img :class="showTitle2" src="assets/img/palavra tigre.png" alt="" style="width: 600px; height: 500px; position: absolute; left: 40px;top: 150px;">
              
                        <img :class="showBanner3" src="assets/img/fundo_tai_chi_chuan.png" alt="" style="width: 70%; height: 33rem; position: absolute; right: 100px;top: 150px;">
-                       <img :class="showTitle3" src="assets/img/palavra tai chi chuan.png" alt="" style="width: 600px; height: 500px; position: absolute; left: 40px;top: 150px;">
+                       <img :class="showTitle3" src="assets/img/palavra tai chi chuan.png" alt="" style="width: 600px; height: 500px; position: absolute; left: 90px;top: 150px;">
                
                        <img :class="showBanner4" src="assets/img/fundo_wingchun.png" alt="" style="width: 70%; height: 33rem; position: absolute; right: 100px;top: 150px;">
                        <img :class="showTitle4" src="assets/img/palavra wing chun.png" alt="" style="width: 600px; height: 500px; position: absolute; left: 40px;top: 150px;">
