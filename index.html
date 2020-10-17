@@ -71,7 +71,7 @@
             0%{
             transform: translateX(0px);
             visibility: visible;
-                opacity: 1;
+            opacity: 1;
             }
            100%{
             transform: translateX(-100px);
@@ -111,6 +111,40 @@
         .navbar p:hover{
             color: #ffffff;
         }
+        .painelOn{
+            animation: wichPainel .1s;
+            visibility: visible;
+            opacity: 1;
+        }
+        @keyframes wichPainel{
+            0%{
+            transform: translateY(-200px);
+            visibility: hidden;
+            opacity: 0;
+            }
+           100%{
+                transform: translateY(0px);
+                visibility: visible;
+                opacity: 1;
+           }
+        }
+        .painelOff{
+            animation: noPainel .1s;
+            visibility: hidden;
+            opacity: 0;
+        }
+        @keyframes noPainel{
+            0%{
+            transform: translateY(0px);
+            visibility: visible;
+            opacity: 1;
+            }
+           100%{
+                transform: translateY(-200px);
+                visibility: hidden;
+                opacity: 0;
+           }
+        }
         .navbar{
             display: flex;
             align-items: center;
@@ -144,8 +178,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            visibility: hidden;
-            opacity: 0;
+            transition: all 1s;
         }
 
         .painel-btn{
@@ -178,30 +211,30 @@
 
             <div class="navbar" style="width: 100%; height: 60px;background-color: rgb(0, 0, 0, 0.7); position: absolute; z-index: 5;">
                 <a href=""><img src="assets/img/logo.png" alt="" style="width: 60px; height: 50px; margin-left: 50px; margin-top: 5px;"></a>
-                <p href="" style="margin-left: 50px; ">Sobre</p><div class="arrow"></div>
-                <p href="" >Estilos</p><div class="arrow"></div>
-                <p href="" >Eventos</p><div class="arrow"></div>
+                <p @click="more()" style="margin-left: 50px; ">Sobre</p><div class="arrow"></div>
+                <p @click="styles()" >Estilos</p><div class="arrow"></div>
+                <p @click="events()" >Eventos</p><div class="arrow"></div>
                 <a href="" style="margin-left: 600px; ">Mestre</a>
-                <p href="" style="margin-left: 50px; ">Contato</p><div class="arrow"></div>
+                <p @click="contacts()" style="margin-left: 50px; ">Contato</p><div class="arrow"></div>
            </div>
 
            <div style="position: absolute; width: 100%;">
-                <div  class="painel-1" style="position: absolute; z-index: 3; left: 140px; top: 0px; width: 250px; height: 250px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;" >
+                <div :class="more_" class="painel-1" style="position: absolute; z-index: 3; left: 140px; top: 0px; width: 250px; height: 250px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;" >
                         <button class=" painel-btn" style="margin-top: 80px;"> Associação Tigre do Oriente</button>
                         <button class=" painel-btn" style="margin-top: 7px;"> Kung-Fu </button>
                 </div>     
-                <div class="painel-2"  style="position: absolute; z-index: 3; left: 240px; top: 0px; width: 250px; height: 190px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">                 
+                <div :class="style_" class="painel-2"  style="position: absolute; z-index: 3; left: 240px; top: 0px; width: 250px; height: 190px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">                 
                     <button class=" painel-btn" style="margin-top: 80px;"> Shaolin Sul <div class="arrow-right"></div> </button>
                 </div>        
-                <div class="painel-3" style="position: absolute; z-index: 3; left: 340px; top: 0px; width: 250px; height: 350px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">
+                <div :class="event_" class="painel-3" style="position: absolute; z-index: 3; left: 340px; top: 0px; width: 250px; height: 350px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">
                     <button class=" painel-btn" style="margin-top: 80px;"> Palestras </button>
                     <button class=" painel-btn" style="margin-top: 7px;"> Torneios </button>   
                     <button class=" painel-btn" style="margin-top: 7px;"> Exibições </button>
                 </div>  
-                <div class="painel-4" style="position: absolute; z-index: 3; right: 70px; top: 0px; width: 250px; height: 350px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">
-                    <button class=" painel-btn" style="margin-top: 80px;"><img style="width: 40px; position: absolute; top: 70px; left: 40px;" src="assets/img/icon-facebook.png" alt=""> Facebook </button>
-                    <button class=" painel-btn" style="margin-top: 7px;"><img style="width: 40.5px; position: absolute; top: 111px; left: 40px;" src="assets/img/icon-insta.png" alt=""> Instagram </button>   
-                    <button class=" painel-btn" style="margin-top: 7px;"><img style="width: 30px; position: absolute; top: 150px; left: 45px;" src="assets/img/icon-whatsapp.png" alt=""> Whatsapp </button>
+                <div :class="contact_" class="painel-4" style="position: absolute; z-index: 3; right: 70px; top: 0px; width: 250px; height: 350px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">
+                    <button class=" painel-btn" style="margin-top: 80px;"><img style="width: 40px; position: absolute; top: 73px; left: 40px;" src="assets/img/icon-facebook.png" alt=""> Facebook </button>
+                    <button class=" painel-btn" style="margin-top: 7px;"><img style="width: 40.5px; position: absolute; top: 114px; left: 40px;" src="assets/img/icon-insta.png" alt=""> Instagram </button>   
+                    <button class=" painel-btn" style="margin-top: 7px;"><img style="width: 30px; position: absolute; top: 153px; left: 45px;" src="assets/img/icon-whatsapp.png" alt=""> Whatsapp </button>
                 </div>    
            </div>
       
@@ -240,6 +273,10 @@
         el: '#app',
        
         data: {
+            more_: "painelOff",
+            style_: "painelOff",
+            event_: "painelOff",
+            contact_: "painelOff",
             showBanner: "active",
             showTitle:  "activeTitle",
             showBanner2: "inactive",
@@ -269,6 +306,59 @@
            },
            onClick4(){
               this.clock = 25;
+           },
+
+           more(){
+               if(this.more_ === "painelOff"){
+                this.more_ = "painelOn";
+                this.style_ = "painelOff";
+                this.event_ = "painelOff";
+                this.contact_ = "painelOff";
+               }else{
+                this.more_ = "painelOff";
+                this.style_ = "painelOff";
+                this.event_ = "painelOff";
+                this.contact_ = "painelOff";
+               }
+           },
+           styles(){
+               if(this.style_ === "painelOff"){
+                this.more_ = "painelOff";
+                this.style_ = "painelOn";
+                this.event_ = "painelOff";
+                this.contact_ = "painelOff";
+               }else{
+                this.more_ = "painelOff";
+                this.style_ = "painelOff";
+                this.event_ = "painelOff";
+                this.contact_ = "painelOff";
+               }
+           },
+           events(){
+               if(this.event_ === "painelOff"){
+                this.more_ = "painelOff";
+                this.style_ = "painelOff";
+                this.event_ = "painelOn";
+                this.contact_ = "painelOff";
+               }else{
+                this.more_ = "painelOff";
+                this.style_ = "painelOff";
+                this.event_ = "painelOff";
+                this.contact_ = "painelOff";
+               }
+           },
+           contacts(){
+               if(this.contact_ === "painelOff"){
+                this.more_ = "painelOff";
+                this.style_ = "painelOff";
+                this.event_ = "painelOff";
+                this.contact_ = "painelOn";
+               }else{
+                this.more_ = "painelOff";
+                this.style_ = "painelOff";
+                this.event_ = "painelOff";
+                this.contact_ = "painelOff";
+               }
            },
            
            lowTime(){
