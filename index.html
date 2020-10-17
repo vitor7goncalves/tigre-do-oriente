@@ -161,6 +161,12 @@
             margin-left: 7px;
             z-index: 5;
         }
+        .moveArrow{
+            transform: rotate(180deg)
+        }
+        .returnArrow{
+            transform: rotate(0deg)
+        }
         .arrow-right{
             position: absolute;
             top: 90px;
@@ -211,11 +217,11 @@
 
             <div class="navbar" style="width: 100%; height: 60px;background-color: rgb(0, 0, 0, 0.7); position: absolute; z-index: 5;">
                 <a href=""><img src="assets/img/logo.png" alt="" style="width: 60px; height: 50px; margin-left: 50px; margin-top: 5px;"></a>
-                <p @click="more()" style="margin-left: 50px; ">Sobre</p><div class="arrow"></div>
-                <p @click="styles()" >Estilos</p><div class="arrow"></div>
-                <p @click="events()" >Eventos</p><div class="arrow"></div>
+                <p @click="more()" style="margin-left: 50px; ">Sobre</p><div :class="setArrow.morArrow " class="arrow"></div>
+                <p @click="styles()" >Estilos</p><div :class="setArrow.styArrow " class="arrow"></div>
+                <p @click="events()" >Eventos</p><div :class="setArrow.eveArrow " class="arrow"></div>
                 <a href="" style="margin-left: 600px; ">Mestre</a>
-                <p @click="contacts()" style="margin-left: 50px; ">Contato</p><div class="arrow"></div>
+                <p @click="contacts()" style="margin-left: 50px; ">Contato</p><div :class="setArrow.contArrow " class="arrow"></div>
            </div>
 
            <div style="position: absolute; width: 100%;">
@@ -277,6 +283,12 @@
             style_: "painelOff",
             event_: "painelOff",
             contact_: "painelOff",
+            setArrow: [
+                morArrow = "returnArrow",
+                styArrow = "returnArrow",
+                eveArrow = "returnArrow",
+                contArrow = "returnArrow",
+            ],
             showBanner: "active",
             showTitle:  "activeTitle",
             showBanner2: "inactive",
@@ -314,11 +326,19 @@
                 this.style_ = "painelOff";
                 this.event_ = "painelOff";
                 this.contact_ = "painelOff";
+                this.setArrow.morArrow = "moveArrow";
+                this.setArrow.styArrow = "returnArrow";
+                this.setArrow.eveArrow = "returnArrow";
+                this.setArrow.contArrow = "returnArrow";
                }else{
                 this.more_ = "painelOff";
                 this.style_ = "painelOff";
                 this.event_ = "painelOff";
                 this.contact_ = "painelOff";
+                this.setArrow.morArrow = "returnArrow";
+                this.setArrow.styArrow = "returnArrow";
+                this.setArrow.eveArrow = "returnArrow";
+                this.setArrow.contArrow = "returnArrow";
                }
            },
            styles(){
@@ -327,11 +347,19 @@
                 this.style_ = "painelOn";
                 this.event_ = "painelOff";
                 this.contact_ = "painelOff";
+                this.setArrow.morArrow = "returnArrow";
+                this.setArrow.styArrow = "moveArrow";
+                this.setArrow.eveArrow = "returnArrow";
+                this.setArrow.contArrow = "returnArrow";
                }else{
                 this.more_ = "painelOff";
                 this.style_ = "painelOff";
                 this.event_ = "painelOff";
                 this.contact_ = "painelOff";
+                this.setArrow.morArrow = "returnArrow";
+                this.setArrow.styArrow = "returnArrow";
+                this.setArrow.eveArrow = "returnArrow";
+                this.setArrow.contArrow = "returnArrow";
                }
            },
            events(){
@@ -340,11 +368,19 @@
                 this.style_ = "painelOff";
                 this.event_ = "painelOn";
                 this.contact_ = "painelOff";
+                this.setArrow.morArrow = "returnArrow";
+                this.setArrow.styArrow = "returnArrow";
+                this.setArrow.eveArrow = "moveArrow";
+                this.setArrow.contArrow = "returnArrow";
                }else{
                 this.more_ = "painelOff";
                 this.style_ = "painelOff";
                 this.event_ = "painelOff";
                 this.contact_ = "painelOff";
+                this.setArrow.morArrow = "returnArrow";
+                this.setArrow.styArrow = "returnArrow";
+                this.setArrow.eveArrow = "returnArrow";
+                this.setArrow.contArrow = "returnArrow";
                }
            },
            contacts(){
@@ -353,11 +389,19 @@
                 this.style_ = "painelOff";
                 this.event_ = "painelOff";
                 this.contact_ = "painelOn";
+                this.setArrow.morArrow = "returnArrow";
+                this.setArrow.styArrow = "returnArrow";
+                this.setArrow.eveArrow = "returnArrow";
+                this.setArrow.contArrow = "moveArrow";
                }else{
                 this.more_ = "painelOff";
                 this.style_ = "painelOff";
                 this.event_ = "painelOff";
                 this.contact_ = "painelOff";
+                this.setArrow.morArrow = "returnArrow";
+                this.setArrow.styArrow = "returnArrow";
+                this.setArrow.eveArrow = "returnArrow";
+                this.setArrow.contArrow = "returnArrow";
                }
            },
            
