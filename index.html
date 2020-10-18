@@ -19,10 +19,45 @@
             font-family: poetsen;
             src:  local(dream\ orphans), url(assets/font/poetsen_one/PoetsenOne-Regular.ttf);
         }
+        button{
+            cursor: pointer;
+        }
 
-    @media only screen and (max-width: 549px) and (min-width: 400px), only screen and (max-width: 800px) and (min-width: 640px),
-    only screen and (max-width: 399px) and (min-width: 350px), only screen and (max-width: 349px){
+    @media only screen and (max-width: 549px) and (min-width: 400px), only screen and (max-width: 800px) and (min-width: 549.5px){
         .navbar-list{
+           visibility: hidden;
+           opacity: 0;
+        }
+
+        #slider #dragon, #slider #tiger, #slider #wing{
+            width: 350px;
+            height: 250px; 
+            left: 60px;
+            top: 250px;
+        }
+        #slider #taichi{
+            width: 350px;
+            height: 250px; 
+            left: 90px;
+            top: 250px;
+        }
+        #slider #dragon-banner, #slider #tiger-banner, #slider #taichi-banner, #slider #wing-banner{
+            width: 90%; 
+            height: 55%; 
+            position: absolute; 
+            right: 5px;
+            top: 150px;
+        }
+        .left-bar{
+            top: 130px; 
+            left: 0px; 
+            height: 400px; 
+            width: 200px;
+        }
+     
+ }
+ @media only screen and (max-width: 399px) and (min-width: 350px), only screen and (max-width: 349px){
+    .navbar-list{
            visibility: hidden;
            opacity: 0;
         }
@@ -32,8 +67,23 @@
             height: 250px; 
             left: 100px;
             top: 30%;
+        } 
+        .title-sul{
+            font-size: 30px;
         }
-      
+        #slider #dragon-banner, #slider #tiger-banner, #slider #taichi-banner, #slider #wing-banner{
+            width: 90%; 
+            height: 55%; 
+            position: absolute; 
+            right: 5px;
+            top: 150px;
+        }
+        .left-bar{
+            top: 130px; 
+            left: 0px; 
+            height: 300px; 
+            width: 200px;
+        }
  }
  @media (max-width: 1250px){
     .master-list, .contact-list, #arrowId{
@@ -58,6 +108,19 @@
             left: 80px;
             top: 150px;
         }
+        #slider #dragon-banner, #slider #tiger-banner, #slider #taichi-banner, #slider #wing-banner{
+            width: 70%; 
+            height: 75%; 
+            position: absolute; 
+            right: 100px;
+            top: 150px;
+        }
+        .left-bar{
+            top: 150px; 
+            left: 0px; 
+            height: 550px; 
+            width: 250px;
+        }
 }
 
         .active{
@@ -66,7 +129,7 @@
             opacity: 1;
         }
         .activeTitle{
-            animation: onActiveTitle 5s;
+            animation: onActiveTitle 2s;
             visibility: visible;
             opacity: 1;
         }
@@ -82,7 +145,7 @@
         }
         @keyframes onActiveTitle{
            0%{
-            transform: translateX(150px)
+            transform: translateX(50px)
             }
            100%{
             transform: translateX(0px)
@@ -226,9 +289,6 @@
             z-index: 5;
 }
 
-        button{
-            cursor: pointer;
-        }
         .painel-1, .painel-2, .painel-3, .painel-4{
             display: flex;
             flex-direction: column;
@@ -265,6 +325,20 @@
             color: #ffffff;
             list-style: none;
             font-size: 9px;
+          }
+          .close{
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              width: 40px;
+              height: 40px;
+              color: #ffffff;
+              font-size: 30px;
+              background-color: rgba(0, 0, 0, .8);
+              z-index: 5;
+          }
+          .close:hover{
+              color: #DAA520;
           }
           /* .mobile{
               
@@ -326,28 +400,29 @@
                      </button>
            <div class="mobile" :class="mobilePainel" style="position: absolute; right: 0px; z-index: 5; width: 350px; height: 650px;">
                 <img src="assets/img/painel.png" alt="" style="width: 100%; height: 100%;">
+                <button class="close"  @click="mobileSetClose()"> X </button>
            </div>
 
          <div class="banner" style="width: 100vh; height: 100%;">
          
                   <img src="assets/img/background-img-header.png" alt="" style="width: 100%;height: 500px;position: absolute; left: 0;">
-                  <h1 style="width: 70%; height: 33rem; position: absolute; z-index: 2; left: 130px; top: 110px; color: #DAA520;">Estilo Shaolin Sul</h1>
+                  <h1 class="title-sul" style="width: 70%; height: 33rem; position: absolute; z-index: 2; left: 130px; top: 110px; color: #DAA520;">Estilo Shaolin Sul</h1>
             <div id="slider">   
                
-                      <img :class="showBanner" src="assets/img/fundo_dragao.png" alt="" style="width: 70%; height: 75%; position: absolute; right: 100px;top: 150px;">
+                      <img id="dragon-banner" :class="showBanner" src="assets/img/fundo_dragao.png" alt="" >
                       <img id="dragon" :class="showTitle" src="assets/img/palavra dragao.png" alt="" style="position: absolute;">
             
-                       <img :class="showBanner2" src="assets/img/fundo_tigre.png" alt="" style="width: 70%; height: 75%; position: absolute; right: 100px;top: 150px;">
+                       <img id="tiger-banner" :class="showBanner2" src="assets/img/fundo_tigre.png" alt="">
                        <img id="tiger" :class="showTitle2" src="assets/img/palavra tigre.png" alt="" style="position: absolute;">
              
-                       <img :class="showBanner3" src="assets/img/fundo_tai_chi_chuan.png" alt="" style="width: 70%; height: 75%; position: absolute; right: 100px;top: 150px;">
+                       <img id="taichi-banner" :class="showBanner3" src="assets/img/fundo_tai_chi_chuan.png" alt="">
                        <img id="taichi" :class="showTitle3" src="assets/img/palavra tai chi chuan.png" alt="" style="position: absolute;">
                
-                       <img :class="showBanner4" src="assets/img/fundo_wingchun.png" alt="" style="width: 70%; height: 75%; position: absolute; right: 100px;top: 150px;">
+                       <img id="wing-banner" :class="showBanner4" src="assets/img/fundo_wingchun.png" alt="" >
                        <img id="wing" :class="showTitle4" src="assets/img/palavra wing chun.png" alt="" style="position: absolute;">
                 
             </div> 
-                  <img src="assets/img/barra.png" style="position: absolute; top: 150px; left: 0px; height: 550px; width: 250px;" alt="">
+                  <img class="left-bar" src="assets/img/barra.png" style="position: absolute;" alt="">
                   <button  style="width: 40px; height: 40px; position: absolute; left: 20px; top: 250px; opacity: 0; z-index: 2;" @click="onClick()" ></button><img id="imgButton" :class="rotate1" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px; top: 250px;">
                   <button  style="width: 40px; height: 40px; position: absolute; left: 20px; top: 320px; opacity: 0; z-index: 2;" @click="onClick2()"></button><img id="imgButton" :class="rotate2" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px; top: 320px;">
                   <button style="width: 40px; height: 40px; position: absolute; left: 20px; top: 390px; opacity: 0; z-index: 2;"  @click="onClick3()"></button><img id="imgButton" :class="rotate3" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px; top: 390px; ">
@@ -494,6 +569,9 @@
                 if(this.mobilePainel === "painelOff"){
                     this.mobilePainel = "painelOn";
                 }
+           },
+           mobileSetClose(){
+               this.mobilePainel = "painelOff";
            },
            
            lowTime(){
