@@ -49,10 +49,25 @@
             top: 150px;
         }
         .left-bar{
-            top: 130px; 
+            top: 90px; 
             left: 0px; 
             height: 400px; 
             width: 200px;
+        }
+        .title-sul{
+            left: 130px;
+        }
+        .dragon-btn, .imgButtonDragon{
+            top: 150px;
+        } 
+        .tiger-btn, .imgButtonTiger{
+            top: 220px;
+        } 
+        .taichi-btn, .imgButtonTaichi{
+            top: 290px;
+        } 
+        .wing-btn, .imgButtonWing{
+            top: 360px;
         }
      
  }
@@ -65,11 +80,12 @@
         #slider #dragon, #slider #tiger, #slider #taichi, #slider #wing{
             width: 270px;
             height: 220px; 
-            left: 80px;
+            left: 50px;
             top: 25%;
         } 
         .title-sul{
             font-size: 20px;
+            left: 90px;
         }
         #slider #dragon-banner, #slider #tiger-banner, #slider #taichi-banner, #slider #wing-banner{
             width: 90%; 
@@ -83,6 +99,18 @@
             left: 0px; 
             height: 300px; 
             width: 200px;
+        }
+        .dragon-btn, .imgButtonDragon{
+            top: 150px;
+        } 
+        .tiger-btn, .imgButtonTiger{
+            top: 220px;
+        } 
+        .taichi-btn, .imgButtonTaichi{
+            top: 290px;
+        } 
+        .wing-btn, .imgButtonWing{
+            top: 360px;
         }
  }
  @media (max-width: 1250px){
@@ -115,11 +143,26 @@
             right: 100px;
             top: 150px;
         }
+        .title-sul{
+            left: 130px;
+        }
         .left-bar{
             top: 150px; 
             left: 0px; 
             height: 550px; 
             width: 250px;
+        }
+        .dragon-btn, .imgButtonDragon{
+            top: 250px;
+        } 
+        .tiger-btn, .imgButtonTiger{
+            top: 320px;
+        } 
+        .taichi-btn, .imgButtonTaichi{
+            top: 390px;
+        } 
+        .wing-btn, .imgButtonWing{
+            top: 460px;
         }
 }
 
@@ -406,7 +449,7 @@
          <div class="banner" style="width: 100vh; height: 100%;">
          
                   <img src="assets/img/background-img-header.png" alt="" style="width: 100%;height: 500px;position: absolute; left: 0;">
-                  <h1 class="title-sul" style="width: 70%; height: 33rem; position: absolute; z-index: 2; left: 130px; top: 110px; color: #DAA520;">Estilo Shaolin Sul</h1>
+                  <h1 class="title-sul" style="width: 70%; height: 33rem; position: absolute; z-index: 2; top: 110px; color: #DAA520;">Estilo Shaolin Sul</h1>
             <div id="slider">   
                
                       <img id="dragon-banner" :class="showBanner" src="assets/img/fundo_dragao.png" alt="" >
@@ -422,12 +465,14 @@
                        <img id="wing" :class="showTitle4" src="assets/img/palavra wing chun.png" alt="" style="position: absolute;">
                 
             </div> 
+            
                   <img class="left-bar" src="assets/img/barra.png" style="position: absolute;" alt="">
-                  <button  style="width: 40px; height: 40px; position: absolute; left: 20px; top: 250px; opacity: 0; z-index: 2;" @click="onClick()" ></button><img id="imgButton" :class="rotate1" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px; top: 250px;">
-                  <button  style="width: 40px; height: 40px; position: absolute; left: 20px; top: 320px; opacity: 0; z-index: 2;" @click="onClick2()"></button><img id="imgButton" :class="rotate2" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px; top: 320px;">
-                  <button style="width: 40px; height: 40px; position: absolute; left: 20px; top: 390px; opacity: 0; z-index: 2;"  @click="onClick3()"></button><img id="imgButton" :class="rotate3" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px; top: 390px; ">
-                  <button style="width: 40px; height: 40px; position: absolute; left: 20px; top: 460px; opacity: 0; z-index: 2;" @click="onClick4()"></button><img id="imgButton" :class="rotate4" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px; top: 460px;">
-          
+            
+                  <button class="dragon-btn" style="width: 40px; height: 40px; position: absolute; left: 20px; opacity: 0; z-index: 2;" @click="onClick()" ></button><img id="imgButton" class="imgButtonDragon" :class="rotate1" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px;">
+                  <button class="tiger-btn" style="width: 40px; height: 40px; position: absolute; left: 20px;  opacity: 0; z-index: 2;" @click="onClick2()"></button><img id="imgButton" class="imgButtonTiger" :class="rotate2" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px;">
+                  <button class="taichi-btn" style="width: 40px; height: 40px; position: absolute; left: 20px; opacity: 0; z-index: 2;"  @click="onClick3()"></button><img id="imgButton" class="imgButtonTaichi" :class="rotate3" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px; ">
+                  <button class="wing-btn" style="width: 40px; height: 40px; position: absolute; left: 20px;  opacity: 0; z-index: 2;" @click="onClick4()"></button><img id="imgButton" class="imgButtonWing" :class="rotate4" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px;">
+            
           </div>
         </header>
     </div>
