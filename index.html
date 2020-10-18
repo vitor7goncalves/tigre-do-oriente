@@ -23,10 +23,10 @@
             cursor: pointer;
         }
 
-    @media only screen and (max-width: 549px) and (min-width: 400px), only screen and (max-width: 800px) and (min-width: 549.5px){
+    @media only screen and (max-width: 800px) and (min-width: 549.5px){
         .navbar-list{
-           visibility: visible;
-           opacity: 1;
+           visibility: hidden;
+           opacity: 0;
         }
 
         #slider #dragon, #slider #tiger, #slider #wing{
@@ -51,7 +51,7 @@
         .left-bar{
             top: 90px; 
             left: 0px; 
-            height: 400px; 
+            height: 600px; 
             width: 200px;
         }
         .title-sul{
@@ -69,22 +69,30 @@
         .wing-btn, .imgButtonWing{
             top: 360px;
         }
+        @keyframes onActiveTitle{
+           0%{
+            transform: translateX(50px)
+            }
+           100%{
+            transform: translateX(0px)
+           }
+        }
      
  }
- @media only screen and (max-width: 399px) and (min-width: 350px), only screen and (max-width: 349px){
+ @media only screen and (max-width: 549px) and (min-width: 400px), only screen and (max-width: 399px) and (min-width: 340px), only screen and (max-width: 240px){
     .navbar-list{
            visibility: hidden;
            opacity: 0;
         }
 
         #slider #dragon, #slider #tiger, #slider #taichi, #slider #wing{
-            width: 170px;
-            height: 120px; 
-            left: 50px;
+            width: 270px;
+            height: 220px; 
+            left: 70px;
             top: 25%;
         } 
         .title-sul{
-            font-size: 20px;
+            font-size: 30px;
             left: 90px;
         }
         #slider #dragon-banner, #slider #tiger-banner, #slider #taichi-banner, #slider #wing-banner{
@@ -97,7 +105,7 @@
         .left-bar{
             top: 130px; 
             left: 0px; 
-            height: 300px; 
+            height: 400px; 
             width: 200px;
         }
         .dragon-btn, .imgButtonDragon{
@@ -111,6 +119,14 @@
         } 
         .wing-btn, .imgButtonWing{
             top: 360px;
+        }
+        @keyframes onActiveTitle{
+           0%{
+            transform: translateX(10px)
+            }
+           100%{
+            transform: translateX(0px)
+           }
         }
  }
  @media (max-width: 1250px){
@@ -164,6 +180,14 @@
         .wing-btn, .imgButtonWing{
             top: 460px;
         }
+        @keyframes onActiveTitle{
+           0%{
+            transform: translateX(50px)
+            }
+           100%{
+            transform: translateX(0px)
+           }
+        }
 }
 
         .active{
@@ -186,14 +210,7 @@
                 opacity: 1;
            }
         }
-        @keyframes onActiveTitle{
-           0%{
-            transform: translateX(50px)
-            }
-           100%{
-            transform: translateX(0px)
-           }
-        }
+       
         .inactive{
            animation: onInactive 2s;
            visibility: hidden;
