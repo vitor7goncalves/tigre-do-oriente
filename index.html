@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
     <title>Tigre do Oriente</title>
     <style>
@@ -18,6 +19,46 @@
             font-family: poetsen;
             src:  local(dream\ orphans), url(assets/font/poetsen_one/PoetsenOne-Regular.ttf);
         }
+
+    @media only screen and (max-width: 549px) and (min-width: 400px), only screen and (max-width: 800px) and (min-width: 640px),
+    only screen and (max-width: 399px) and (min-width: 350px), only screen and (max-width: 349px){
+        .navbar-list{
+           visibility: hidden;
+           opacity: 0;
+        }
+
+        #slider #dragon, #slider #tiger, #slider #taichi, #slider #wing{
+            width: 350px;
+            height: 250px; 
+            left: 100px;
+            top: 30%;
+        }
+      
+ }
+ @media (max-width: 1250px){
+    .master-list, .contact-list, #arrowId{
+         margin-left: auto;
+    }
+}
+@media (min-width: 800px){
+    .btn-mobile{
+              visibility: hidden;
+              opacity: 0;
+          }
+
+          #slider #dragon, #slider #tiger, #slider #wing{
+            width: 550px;
+            height: 450px; 
+            left: 40px;
+            top: 150px;
+        }
+        #slider #taichi{
+            width: 550px;
+            height: 450px; 
+            left: 80px;
+            top: 150px;
+        }
+}
 
         .active{
             animation: onActive 2s;
@@ -90,17 +131,31 @@
             height: 40px;
             transform: rotate(0deg)
         }
+        .navbar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar a{
+            font-family: dream;
+            font-size: 17px;
+        }
 
         a{
             text-decoration: none;
             text-transform: uppercase;
             color: #DAA520;
+            z-index: 10;
         }
         .navbar a:hover{
             color: #ffffff;
         }
-        .navbar p{
-            text-decoration: none;
+        .navbar-list{
+            display: flex;
+        }
+        .navbar li{
+            position: relative;
+            list-style: none;
             text-transform: uppercase;
             color: #DAA520;
             cursor: pointer;
@@ -108,7 +163,7 @@
             font-size: 17px;
         }
 
-        .navbar p:hover{
+        .navbar li:hover{
             color: #ffffff;
         }
         .painelOn{
@@ -145,21 +200,15 @@
                 opacity: 0;
            }
         }
-        .navbar{
-            display: flex;
-            align-items: center;
-        }
-        .navbar a{
-            font-family: dream;
-            font-size: 17px;
-        }
         .arrow{
+            position: relative;
             border-top: 7px solid #DAA520; 
             border-left: 7px solid transparent;  
             border-right: 7px solid transparent;
-            margin-right: 35px;
-            margin-left: 7px;
+            margin-right: 0px;
+            margin-left: 0px;
             z-index: 5;
+            float: left;
         }
         .moveArrow{
             transform: rotate(180deg)
@@ -201,6 +250,26 @@
         .painel-btn:hover{
             background-color: rgba(255, 255, 255, .3);
         }
+          .btn-mobile{
+              position: absolute;
+              top: 7px;
+              right: 10px;
+              width: 50px;
+              height: 50px;
+              z-index: 5;
+              background-color: rgb(0, 0, 0, 0.2);
+              border: none;
+              border-radius: 10px;
+          }
+          .btn-mobile li{
+            color: #ffffff;
+            list-style: none;
+            font-size: 9px;
+          }
+          /* .mobile{
+              
+          } */
+
         #imgButton{
             transition: all 1s;
         }
@@ -209,59 +278,74 @@
             font-family: poetsen;
             text-shadow: 2px 4px 2px rgba(0, 0, 0, .8);
         }
+      
     </style>
 </head>
 <body>
     <div id="app">
-        <header class="container" style="width: 100%; height: 100vh;">
+        <header class="container">
 
-            <div class="navbar" style="width: 100%; height: 60px;background-color: rgb(0, 0, 0, 0.7); position: absolute; z-index: 5;">
-                <a href=""><img src="assets/img/logo.png" alt="" style="width: 60px; height: 50px; margin-left: 50px; margin-top: 5px;"></a>
-                <p @click="more()" style="margin-left: 50px; ">Sobre</p><div :class="setArrow.morArrow " class="arrow"></div>
-                <p @click="styles()" >Estilos</p><div :class="setArrow.styArrow " class="arrow"></div>
-                <p @click="events()" >Eventos</p><div :class="setArrow.eveArrow " class="arrow"></div>
-                <a href="" style="margin-left: 600px; ">Mestre</a>
-                <p @click="contacts()" style="margin-left: 50px; ">Contato</p><div :class="setArrow.contArrow " class="arrow"></div>
-           </div>
-
-           <div style="position: absolute; width: 100%;">
-                <div :class="more_" class="painel-1" style="position: absolute; z-index: 3; left: 140px; top: 0px; width: 250px; height: 250px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;" >
+            <div class="navbar" style="width: 100%; height: 60px;background-color: rgb(0, 0, 0, 0.7); position: absolute; left: 0; top: 0; z-index: 5; padding: 0;">
+                <a href="index.html"><img src="assets/img/logo.png" alt="" class="logo" style=" position: absolute; width: 60px; height: 55px; left: 5%; top: 2px;"></a>
+              <ul class="navbar-list" style=" position: absolute; width: 100%; top: 20px;">
+                <li @click="more()" style="left: 13%;">Sobre
+                    <div :class="more_" class="painel-1" style="position: absolute; z-index: -3; top: -20px; width: 250px; height: 250px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;" >
                         <button class=" painel-btn" style="margin-top: 80px;"> Associação Tigre do Oriente</button>
                         <button class=" painel-btn" style="margin-top: 7px;"> Kung-Fu </button>
-                </div>     
-                <div :class="style_" class="painel-2"  style="position: absolute; z-index: 3; left: 240px; top: 0px; width: 250px; height: 190px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">                 
-                    <button class=" painel-btn" style="margin-top: 80px;"> Shaolin Sul <div class="arrow-right"></div> </button>
-                </div>        
-                <div :class="event_" class="painel-3" style="position: absolute; z-index: 3; left: 340px; top: 0px; width: 250px; height: 350px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">
-                    <button class=" painel-btn" style="margin-top: 80px;"> Palestras </button>
-                    <button class=" painel-btn" style="margin-top: 7px;"> Torneios </button>   
-                    <button class=" painel-btn" style="margin-top: 7px;"> Exibições </button>
-                </div>  
-                <div :class="contact_" class="painel-4" style="position: absolute; z-index: 3; right: 70px; top: 0px; width: 250px; height: 350px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">
-                    <button class=" painel-btn" style="margin-top: 80px;"><img style="width: 40px; position: absolute; top: 73px; left: 40px;" src="assets/img/icon-facebook.png" alt=""> Facebook </button>
-                    <button class=" painel-btn" style="margin-top: 7px;"><img style="width: 40.5px; position: absolute; top: 114px; left: 40px;" src="assets/img/icon-insta.png" alt=""> Instagram </button>   
-                    <button class=" painel-btn" style="margin-top: 7px;"><img style="width: 30px; position: absolute; top: 153px; left: 45px;" src="assets/img/icon-whatsapp.png" alt=""> Whatsapp </button>
-                </div>    
+                </div> 
+                </li><div :class="setArrow.morArrow " class="arrow"  style="left: 14%;"></div>
+                <li @click="styles()"  style="left: 17%;" >Estilos
+                    <div :class="style_" class="painel-2"  style="position: absolute; z-index: -3; top: -20px; width: 250px; height: 190px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">                 
+                        <button class=" painel-btn" style="margin-top: 80px;"> Shaolin Sul <div class="arrow-right"></div> </button>
+                    </div> 
+                </li><div :class="setArrow.styArrow " class="arrow"  style="left: 18%;"></div>
+                <li @click="events()"  style="left: 21%;">Eventos
+                    <div :class="event_" class="painel-3" style="position: absolute; z-index: -3; top: -20px; width: 250px; height: 350px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">
+                        <button class=" painel-btn" style="margin-top: 80px;"> Palestras </button>
+                        <button class=" painel-btn" style="margin-top: 7px;"> Torneios </button>   
+                        <button class=" painel-btn" style="margin-top: 7px;"> Exibições </button>
+                    </div>  
+                </li><div :class="setArrow.eveArrow " class="arrow"  style="left: 22%;"></div>
+                <li class="master-list" style="margin-left: auto;">Mestre</li>
+                <li @click="contacts()" class="contact-list" style="margin-left: 4%;">Contato
+                    <div :class="contact_" class="painel-4" style="position: absolute; z-index: -3; right: -30px; top: -20px; width: 250px; height: 350px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">
+                        <button class=" painel-btn" style="margin-top: 80px;"><img style="width: 40px; position: absolute; top: 73px; left: 40px;" src="assets/img/icon-facebook.png" alt="">Facebook</button>
+                        <button class=" painel-btn" style="margin-top: 7px;"><img style="width: 40.5px; position: absolute; top: 114px; left: 40px;" src="assets/img/icon-insta.png" alt=""> Instagram </button>   
+                        <button class=" painel-btn" style="margin-top: 7px;"><img style="width: 30px; position: absolute; top: 153px; left: 45px;" src="assets/img/icon-whatsapp.png" alt=""> Whatsapp </button>
+                    </div> 
+                </li><div :class="setArrow.contArrow " class="arrow" id="arrowId" style="margin-left: 1%;margin-right: 2%;"></div>
+          
+             </ul>
            </div>
-      
-         <div class="banner">
+                     <button class="btn-mobile" @click="mobileSet()">
+                         <ul>
+                             <li>__________</li>
+                             <li>__________</li>
+                             <li>__________</li>
+                         </ul>
+                     </button>
+           <div class="mobile" :class="mobilePainel" style="position: absolute; right: 0px; z-index: 5; width: 350px; height: 650px;">
+                <img src="assets/img/painel.png" alt="" style="width: 100%; height: 100%;">
+           </div>
+
+         <div class="banner" style="width: 100vh; height: 100%;">
          
-                  <img src="assets/img/background-img-header.png" alt="" style="width: 100%;height: 500px;">
-                  <h1 style="width: 70%; height: 33rem; position: absolute; z-index: 2; left: 210px; top: 110px; color: #DAA520;">Estilo Shaolin Sul</h1>
+                  <img src="assets/img/background-img-header.png" alt="" style="width: 100%;height: 500px;position: absolute; left: 0;">
+                  <h1 style="width: 70%; height: 33rem; position: absolute; z-index: 2; left: 130px; top: 110px; color: #DAA520;">Estilo Shaolin Sul</h1>
             <div id="slider">   
                
-                      <img :class="showBanner" src="assets/img/fundo_dragao.png" alt="" style="width: 70%; height: 33rem; position: absolute; right: 100px;top: 150px;">
-                      <img :class="showTitle" src="assets/img/palavra dragao.png" alt="" style="width: 600px; height: 500px; position: absolute; left: 40px;top: 150px;">
+                      <img :class="showBanner" src="assets/img/fundo_dragao.png" alt="" style="width: 70%; height: 75%; position: absolute; right: 100px;top: 150px;">
+                      <img id="dragon" :class="showTitle" src="assets/img/palavra dragao.png" alt="" style="position: absolute;">
             
-                       <img :class="showBanner2" src="assets/img/fundo_tigre.png" alt="" style="width: 70%; height: 33rem; position: absolute; right: 100px;top: 150px;">
-                       <img :class="showTitle2" src="assets/img/palavra tigre.png" alt="" style="width: 600px; height: 500px; position: absolute; left: 40px;top: 150px;">
+                       <img :class="showBanner2" src="assets/img/fundo_tigre.png" alt="" style="width: 70%; height: 75%; position: absolute; right: 100px;top: 150px;">
+                       <img id="tiger" :class="showTitle2" src="assets/img/palavra tigre.png" alt="" style="position: absolute;">
              
-                       <img :class="showBanner3" src="assets/img/fundo_tai_chi_chuan.png" alt="" style="width: 70%; height: 33rem; position: absolute; right: 100px;top: 150px;">
-                       <img :class="showTitle3" src="assets/img/palavra tai chi chuan.png" alt="" style="width: 600px; height: 500px; position: absolute; left: 90px;top: 150px;">
+                       <img :class="showBanner3" src="assets/img/fundo_tai_chi_chuan.png" alt="" style="width: 70%; height: 75%; position: absolute; right: 100px;top: 150px;">
+                       <img id="taichi" :class="showTitle3" src="assets/img/palavra tai chi chuan.png" alt="" style="position: absolute;">
                
-                       <img :class="showBanner4" src="assets/img/fundo_wingchun.png" alt="" style="width: 70%; height: 33rem; position: absolute; right: 100px;top: 150px;">
-                       <img :class="showTitle4" src="assets/img/palavra wing chun.png" alt="" style="width: 600px; height: 500px; position: absolute; left: 40px;top: 150px;">
-               
+                       <img :class="showBanner4" src="assets/img/fundo_wingchun.png" alt="" style="width: 70%; height: 75%; position: absolute; right: 100px;top: 150px;">
+                       <img id="wing" :class="showTitle4" src="assets/img/palavra wing chun.png" alt="" style="position: absolute;">
+                
             </div> 
                   <img src="assets/img/barra.png" style="position: absolute; top: 150px; left: 0px; height: 550px; width: 250px;" alt="">
                   <button  style="width: 40px; height: 40px; position: absolute; left: 20px; top: 250px; opacity: 0; z-index: 2;" @click="onClick()" ></button><img id="imgButton" :class="rotate1" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px; top: 250px;">
@@ -270,6 +354,7 @@
                   <button style="width: 40px; height: 40px; position: absolute; left: 20px; top: 460px; opacity: 0; z-index: 2;" @click="onClick4()"></button><img id="imgButton" :class="rotate4" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px; top: 460px;">
           
           </div>
+        </header>
     </div>
 
 
@@ -279,6 +364,7 @@
         el: '#app',
        
         data: {
+            mobilePainel: "painelOff",
             more_: "painelOff",
             style_: "painelOff",
             event_: "painelOff",
@@ -404,6 +490,11 @@
                 this.setArrow.contArrow = "returnArrow";
                }
            },
+           mobileSet(){
+                if(this.mobilePainel === "painelOff"){
+                    this.mobilePainel = "painelOn";
+                }
+           },
            
            lowTime(){
                this.clock ++;
@@ -481,7 +572,5 @@
 })
 
 </script>
-</header>
-
 </body>
 </html>
