@@ -26,6 +26,11 @@ new Vue({
         rotate3: "inactiveButton",
         rotate4: "inactiveButton",
         clock: 1,
+        subTitle: "Instrutores",
+        instructors:[ 
+            { name1: "Luiz Henrique da Costa"},
+            { name2: "Bruno Mendes"}
+        ],        
     },
     
     methods: {

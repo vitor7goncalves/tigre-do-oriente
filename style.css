@@ -73,7 +73,7 @@ button{
 .navbar-list-mobile{
     left: 25px;
     width: 100%; 
-    top: 70px;
+    top: 20px;
 }
 
 }
@@ -132,7 +132,7 @@ button{
 .navbar-list-mobile{
     left: 25px;
     width: 100%; 
-    top: 70px;
+    top: 20px;
 }
 
 
@@ -458,3 +458,6 @@ h1{
     font-family: poetsen;
     text-shadow: 2px 4px 2px rgba(0, 0, 0, .8);
 }
+
+/*Intrustors*/
+
