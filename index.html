@@ -99,7 +99,7 @@
 
          <div class="banner" style="width: 100vh; height: 100%;">
          
-                  <img src="assets/img/background-img-header.png" alt="" style="width: 100%;height: 500px;position: absolute; left: 0;">
+                  <img src="assets/img/background-img-header.png" alt="" style="width: 100%;height: 500px;position: absolute; left: 0;top: 0px;">
                   <h1 class="title-sul" style="width: 70%; height: 33rem; position: absolute; z-index: 2; top: 110px; color: #DAA520;">Estilo Shaolin Sul</h1>
             <div id="slider">   
                
@@ -128,13 +128,13 @@
         </header>
         <section class="container">
             
-            <div class="instructors-section" style="position: absolute; margin-top: 47rem;">
-                <img style="position: absolute; width: 70rem; height: 20rem; top: -215px; left: 0px;z-index: -1;" src="assets/img/barra_horizontal.png" alt="">
-                <h3 style="margin-left: 50px;margin-top: 20px; font-family: dream;">{{subTitle}}</h3>
+            <div class="instructors-section" style="margin-top: 36rem;">
+                <img style="position: relative; width: 75rem; height: 10rem; top: 20px;" src="assets/img/barra_horizontal.png" alt="">
+                <h3 style="margin-left: 50px; font-family: dream;">{{subTitle}}</h3>
                 <p style="margin-left: 10px;">
                     _____________________________________________________________________________________________________________________________________________________________________
                 </p>
-                <img src="assets/img/manchas2.png" alt="" width="200px" style="position: absolute; right: 0px;">
+                <img src="assets/img/manchas2.png" alt="" width="200px" style="position: absolute; right: 90px;">
             <div v-for="instructor in instructors">
                 <h4 style="font-family: poetsen;">{{instructor.name1}}</h4>
             </div>
@@ -149,10 +149,40 @@
               <p style="margin-left: 10px;">
                 _____________________________________________________________________________________________________________________________________________________________________
             </p>
-            <img src="assets/img/manchas.png" alt="" width="200px" style="position: absolute; left: -100px;">
+            <img src="assets/img/manchas.png" alt="" width="200px" style="position: absolute; left: 40px;">
             <img src="assets/img/manchas3.png" alt="" width="200px" style="position: absolute; right: 0px;">
             <div v-for="instructor in instructors">
-                <h4 style="font-family: poetsen; margin-left: 950px;">{{instructor.name2}}</h4>
+                <h4 style="font-family: poetsen; margin-left: 850px;">{{instructor.name2}}</h4>
+            </div>
+            <div style="display: flex;" class="pr-5">
+                <p style="margin-top: 90px; font-family: dream; font-size: 17px; font-weight: 200; margin-left: 100px;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Magni repellendus ratione dicta error quod eum
+                     laudantium minima consectetur numquam blanditiis, laboriosam illum nesciunt eius alias
+                      molestias? Molestias eveniet excepturi ratione.</p>
+                <img src="assets/img/bruno.png" alt="" width= "250px" class="mr-1">
+                
+              </div>
+              <p style="margin-left: 10px;">
+                _____________________________________________________________________________________________________________________________________________________________________
+            </p>
+            <div v-for="instructor in instructors">
+                <h4 style="font-family: poetsen;">{{instructor.name3}}</h4>
+            </div>
+              <div style="display: flex;">
+                <img src="assets/img/sonia.png" alt="" width="250px">
+                <p style="margin-top: 90px; font-family: dream; font-size: 17px; font-weight: 200; margin-right: 230px;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Magni repellendus ratione dicta error quod eum
+                     laudantium minima consectetur numquam blanditiis, laboriosam illum nesciunt eius alias
+                      molestias? Molestias eveniet excepturi ratione.</p>
+              </div>
+              <p style="margin-left: 10px;">
+                _____________________________________________________________________________________________________________________________________________________________________
+            </p>
+            <img src="assets/img/manchas4.png" alt="" width="200px" style="position: absolute; left: 50px;">
+            <div v-for="instructor in instructors">
+                <h4 style="font-family: poetsen; margin-left: 850px;">{{instructor.name4}}</h4>
             </div>
             <div style="display: flex;" class="pr-5">
                 <p style="margin-top: 90px; font-family: dream; font-size: 17px; font-weight: 200; margin-left: 90px;">
@@ -160,13 +190,25 @@
                      Magni repellendus ratione dicta error quod eum
                      laudantium minima consectetur numquam blanditiis, laboriosam illum nesciunt eius alias
                       molestias? Molestias eveniet excepturi ratione.</p>
-                <img src="assets/img/bruno.png" alt="" width= "250px" class="mr-5">
+                <img src="assets/img/fred.png" alt="" width= "250px" >
                 
               </div>
               <p style="margin-left: 10px;">
                 _____________________________________________________________________________________________________________________________________________________________________
             </p>
          </div>
+             <div class="filos" style=" position: relative; text-align: center; width: 100%; height: 500px;">
+                <img style="margin-left: 42.5%; margin-bottom: 30px;" src="assets/img/font_rend.png" alt="">
+                 <h4 style="font-size: 30px; font-family: poetsen; margin-bottom: 20px;">{{filosophys}}</h4>
+                 <p style="font-family: dream; font-size: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque esse molestias sunt officiis eum voluptates amet impedit quia iure, aliquid laudantium sit doloremque iste quaerat at nemo culpa iusto eaque.</p>
+                 <br>
+                <img style="position: relative; width: 75rem; height: 10rem; top: -20px;" src="assets/img/barra_horizontal.png" alt="">
+                </div>
+           <div style="text-align: center;" class="galery">
+               <h3>Galeria</h3>
+           </div>
+         
+
         </section>
 
     </div>

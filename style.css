@@ -10,6 +10,10 @@
     font-family: poetsen;
     src:  local(dream\ orphans), url(assets/font/poetsen_one/PoetsenOne-Regular.ttf);
 }
+@font-face {
+    font-family: imperial;
+    src:  local(dream\ orphans), url(assets/font/ming_imperial/Ming\ Imperial.TTF);
+}
 button{
     cursor: pointer;
 }
@@ -458,6 +462,4 @@ h1{
     font-family: poetsen;
     text-shadow: 2px 4px 2px rgba(0, 0, 0, .8);
 }
-
-/*Intrustors*/
 

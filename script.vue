@@ -29,8 +29,13 @@ new Vue({
         subTitle: "Instrutores",
         instructors:[ 
             { name1: "Luiz Henrique da Costa"},
-            { name2: "Bruno Mendes"}
-        ],        
+            { name2: "Bruno Mendes"},
+            { name3: "Sonia"},
+            { name4: "Frederico"},
+        ], 
+        filosophys: "Filosofia"
+           
+             
     },
     
     methods: {
