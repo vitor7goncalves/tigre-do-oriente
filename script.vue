@@ -33,9 +33,8 @@ new Vue({
             { name3: "Sonia"},
             { name4: "Frederico"},
         ], 
-        filosophys: "Filosofia"
+        filosophys: "Filosofia",
            
-             
     },
     
     methods: {

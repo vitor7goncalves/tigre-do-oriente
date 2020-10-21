@@ -20,12 +20,12 @@
                         <button class=" painel-btn" style="margin-top: 80px; font-size: 14px;"> Associação de Artes Tigre do Oriente</button>
                         <button class=" painel-btn" style="margin-top: 7px; font-size: 14px;"> Kung-Fu </button>
                 </div> 
-                </li><div :class="setArrow.morArrow " class="arrow"  style="left: 14%;  bottom: -5px;"></div>
+                </li><div :class="setArrow.morArrow " class="arrow"  style="left: 13%;  bottom: -5px;"></div>
                 <li @click="styles()"  style="left: 17%;" >Estilos
                     <div :class="style_" class="painel-2"  style="position: absolute; z-index: -3; top: -20px; width: 250px; height: 190px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">                 
                         <button class=" painel-btn" style="margin-top: 80px; font-size: 14px;"> Shaolin Sul <div class="arrow-right"></div> </button>
                     </div> 
-                </li><div :class="setArrow.styArrow " class="arrow"  style="left: 18%;  bottom: -5px;"></div>
+                </li><div :class="setArrow.styArrow " class="arrow"  style="left: 17.5%;  bottom: -5px;"></div>
                 <li @click="events()"  style="left: 21%;">Eventos
                     <div :class="event_" class="painel-3" style="position: absolute; z-index: -3; top: -20px; width: 250px; height: 350px;"><img src="assets/img/painel.png" alt="" style="position: absolute; width: 100%; height: 100%;">
                         <button class=" painel-btn" style="margin-top: 80px; font-size: 14px;"> Palestras </button>
@@ -58,7 +58,7 @@
                              <li>__________</li>
                          </ul>
                      </button>
-           <div class="mobile" :class="mobilePainel" style="position: absolute; right: 0px; z-index: 5; width: 350px; height: 650px;">
+           <div class="mobile" :class="mobilePainel" style="position: absolute; top: 0%; right: 0px; z-index: 5; width: 350px; height: 650px;">
                 <img src="assets/img/painel.png" alt="" style="width: 100%; height: 100%;">
                 <button class="close"  @click="mobileSetClose()"> X </button>
                 <ul class="navbar-list-mobile" style=" position: absolute;">
@@ -128,12 +128,12 @@
         </header>
         <section class="container">
             
-            <div class="instructors-section" style="margin-top: 36rem;">
-                <img style="position: relative; width: 75rem; height: 10rem; top: 20px;" src="assets/img/barra_horizontal.png" alt="">
+            <div class="instructors-section" style="margin-top: 36rem; align-items: center;">
+                <img style="position: relative; width: 100%; height: 30%; top: 10px;" src="assets/img/barra_horizontal.png" alt="">
                 <h3 style="margin-left: 50px; font-family: dream;">{{subTitle}}</h3>
-                <p style="margin-left: 10px;">
-                    _____________________________________________________________________________________________________________________________________________________________________
-                </p>
+               
+                <hr style="border-color: black;">
+
                 <img src="assets/img/manchas2.png" alt="" width="200px" style="position: absolute; right: 90px;">
             <div v-for="instructor in instructors">
                 <h4 style="font-family: poetsen;">{{instructor.name1}}</h4>
@@ -146,10 +146,10 @@
                      laudantium minima consectetur numquam blanditiis, laboriosam illum nesciunt eius alias
                       molestias? Molestias eveniet excepturi ratione.</p>
               </div>
-              <p style="margin-left: 10px;">
-                _____________________________________________________________________________________________________________________________________________________________________
-            </p>
-            <img src="assets/img/manchas.png" alt="" width="200px" style="position: absolute; left: 40px;">
+             
+              <hr style="border-color: black;">
+           
+              <img src="assets/img/manchas.png" alt="" width="200px" style="position: absolute; left: 40px;">
             <img src="assets/img/manchas3.png" alt="" width="200px" style="position: absolute; right: 0px;">
             <div v-for="instructor in instructors">
                 <h4 style="font-family: poetsen; margin-left: 850px;">{{instructor.name2}}</h4>
@@ -163,10 +163,10 @@
                 <img src="assets/img/bruno.png" alt="" width= "250px" class="mr-1">
                 
               </div>
-              <p style="margin-left: 10px;">
-                _____________________________________________________________________________________________________________________________________________________________________
-            </p>
-            <div v-for="instructor in instructors">
+            
+              <hr style="border-color: black;">
+          
+              <div v-for="instructor in instructors">
                 <h4 style="font-family: poetsen;">{{instructor.name3}}</h4>
             </div>
               <div style="display: flex;">
@@ -177,10 +177,10 @@
                      laudantium minima consectetur numquam blanditiis, laboriosam illum nesciunt eius alias
                       molestias? Molestias eveniet excepturi ratione.</p>
               </div>
-              <p style="margin-left: 10px;">
-                _____________________________________________________________________________________________________________________________________________________________________
-            </p>
-            <img src="assets/img/manchas4.png" alt="" width="200px" style="position: absolute; left: 50px;">
+            
+              <hr style="border-color: black;">
+           
+              <img src="assets/img/manchas4.png" alt="" width="200px" style="position: absolute; left: 50px;">
             <div v-for="instructor in instructors">
                 <h4 style="font-family: poetsen; margin-left: 850px;">{{instructor.name4}}</h4>
             </div>
@@ -193,24 +193,65 @@
                 <img src="assets/img/fred.png" alt="" width= "250px" >
                 
               </div>
-              <p style="margin-left: 10px;">
-                _____________________________________________________________________________________________________________________________________________________________________
-            </p>
-         </div>
-             <div class="filos" style=" position: relative; text-align: center; width: 100%; height: 500px;">
-                <img style="margin-left: 42.5%; margin-bottom: 30px;" src="assets/img/font_rend.png" alt="">
+             
+              <hr style="border-color: black;">
+         
+            </div>
+             <div class="container" style=" position: relative; align-items: center; text-align: center; width: 100%; height: 500px;">
+                <img style="margin-bottom: 30px;" src="assets/img/font_rend.png" alt="">
                  <h4 style="font-size: 30px; font-family: poetsen; margin-bottom: 20px;">{{filosophys}}</h4>
                  <p style="font-family: dream; font-size: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque esse molestias sunt officiis eum voluptates amet impedit quia iure, aliquid laudantium sit doloremque iste quaerat at nemo culpa iusto eaque.</p>
                  <br>
-                <img style="position: relative; width: 75rem; height: 10rem; top: -20px;" src="assets/img/barra_horizontal.png" alt="">
+                <img style="position: relative; width: 80%; height: 30%; top: -20px;" src="assets/img/barra_horizontal.png" alt="">
                 </div>
-           <div style="text-align: center;" class="galery">
-               <h3>Galeria</h3>
-           </div>
-         
+           <div style="text-align: center; height: 500px; width: 100%; display: inline ; align-items: center;"  >
+               <h3 style="font-family: dream;">Galeria</h3>
+           <hr style="border-color: black;">
+            <img src="assets/img/manchas2.png" alt="" width="200px" style="position: absolute; right: 15px;z-index: -1;">
+            <img src="assets/img/manchas3.png" alt="" width="200px" style="position: absolute; left: 1px;z-index: -1;">  
+               <img style="width: 300px; margin: 30px 30px 0 0; box-shadow: 5px 5px 10px;" src="https://scontent.frao2-1.fna.fbcdn.net/v/t1.0-9/120926377_3463497913766700_649075352906279303_n.jpg?_nc_cat=101&_nc_sid=e3f864&_nc_ohc=e5HQ_lYkg1IAX_xY7_x&_nc_ht=scontent.frao2-1.fna&oh=292cd5117f69c6c94274b7e997012fcb&oe=5FB59244" alt="">
+               <img style="width: 360px; margin: 30px 30px 0 0; box-shadow: 5px 5px 10px;" src="https://scontent.frao2-1.fna.fbcdn.net/v/t1.0-9/51547986_2159875110795660_1831000856716115968_o.jpg?_nc_cat=102&_nc_sid=730e14&_nc_ohc=xW4nvqrV3KMAX_hZCXv&_nc_ht=scontent.frao2-1.fna&oh=a8674ce807a2e9930c35eefd569d6fbd&oe=5FB32900" alt="">
+               <img style="width: 350px; height: 270px; margin: 30px 30px 0 0; box-shadow: 5px 5px 10px;" src="https://scontent.frao2-1.fna.fbcdn.net/v/t31.0-8/25394645_1624974000952443_7434263568137183791_o.jpg?_nc_cat=101&_nc_sid=19026a&_nc_ohc=ePMeX53irnkAX-zg0_2&_nc_ht=scontent.frao2-1.fna&oh=a759848ed7cad9a6067e4e79d1ba6402&oe=5FB57EFB" alt="">      
+              
+            </div>
+            <button style="align-self: center;" id="btn-galery" type="button" class="btn btn-dark m-3">Veja mais</button>
+            <hr style="border-color: black;">
+            
+            
+         <div style="position: relative; text-align: center;">
+             <h1 class="m-5 text-warning">Participe de uma aula grátis</h1>
+             <img style="position: absolute; width: 70%; height: 150px; left: 12%; bottom: -180%; z-index: -1;" src="assets/img/pincel.png" alt="">
+         </div>
 
         </section>
+<footer class="container">
+    <div style="display: flex; flex-direction: column; position: absolute; top: 217rem; left: 50px;" class="social">
+    <form action="https://www.facebook.com/groups/1936458629940274/">
+        <button style="background-color: rgb(0, 0, 0, 0); border: none; border-radius: 50%;"><img width="70px" style="cursor: pointer;" src="assets/img/icon-facebook.png" alt=""></button>
+    </form>
+    <form action="https://www.facebook.com/groups/1936458629940274/">
+        <button style="background-color: rgb(0, 0, 0, 0); border: none; border-radius: 50%;"><img width="70px" style="cursor: pointer;" src="assets/img/icon-insta.png" alt=""></button>
+    </form>
+    <form action="https://www.facebook.com/groups/1936458629940274/">
+        <button style="background-color: rgb(0, 0, 0, 0);margin-left: 10px; margin-top: 10px; border: none; border-radius: 50%;"><img width="55px" style="cursor: pointer;" src="assets/img/icon-whatsapp.png" alt=""></button>
+    </form>
+    </div>
+    <div style="align-items: center; display: flex;flex-direction: column; width: 100%; height: 500px; text-align: center; margin-left: 0;">
+    <a href="" style="margin-top: 20px; margin-bottom: 90px;"><img width="170px"  src="assets/img/logo rodape.png" alt=""></a>
+    <ul>
+        <li style="cursor: pointer; font-size: 20px; list-style: none; font-family: dream; color: #DAA520;">Sobre</li>
+        <li style="cursor: pointer; font-size: 20px;  list-style: none; font-family: dream; color: #DAA520;">Estilos</li>
+        <li style="cursor: pointer; font-size: 20px;  list-style: none; font-family: dream; color: #DAA520;">Eventos</li>
+        <h4 style="font-family: dream; font-style: inherit;">Endereço</h4>
+        <p style="font-family: dream; font-style: inherit;">Rua: Sem nome - Centro - Queimados - RJ</p>
+        <p style="font-style: inherit;">&copy; Todos os direitos reservados</p>
+    </ul>
+ <img style="width: 100%; position: absolute; z-index: -2; top: 211rem;" src="assets/img/background-img-footer.png" alt="">
 
+</div>
+
+
+</footer>
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
