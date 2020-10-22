@@ -32,8 +32,20 @@ new Vue({
             { name2: "Bruno Mendes"},
             { name3: "Sonia"},
             { name4: "Frederico"},
+        ],
+        textInstructors:[
+            {text1: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni repellendus ratione dicta error quod eum laudantium minima consectetur numquam blanditiis, laboriosam illum nesciunt eius alias molestias? Molestias eveniet excepturi ratione."},
+            {text2: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni repellendus ratione dicta error quod eum laudantium minima consectetur numquam blanditiis, laboriosam illum nesciunt eius alias molestias? Molestias eveniet excepturi ratione."},
+            {text3: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni repellendus ratione dicta error quod eum laudantium minima consectetur numquam blanditiis, laboriosam illum nesciunt eius alias molestias? Molestias eveniet excepturi ratione."},
+            {text4: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni repellendus ratione dicta error quod eum laudantium minima consectetur numquam blanditiis, laboriosam illum nesciunt eius alias molestias? Molestias eveniet excepturi ratione."},
+          
         ], 
         filosophys: "Filosofia",
+        textFilo:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque esse molestias sunt officiis eum voluptates amet impedit quia iure, aliquid laudantium sit doloremque iste quaerat at nemo culpa iusto eaque.",
+        galery: "Galeria",
+        warning: "Participe de uma aula grátis",
+        adressTitle: "Edereço",
+        adress: "Rua: Sem nome - Centro - Queimados - RJ",
            
     },
     

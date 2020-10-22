@@ -17,8 +17,8 @@
 button{
     cursor: pointer;
 }
-
-@media only screen and (max-width: 800px) and (min-width: 549.5px){
+/*-------------------Tela tablet---------------------*/
+@media only screen and (max-width: 999px) and (min-width: 549.5px){
 .navbar-list{
    display: none;
 }
@@ -79,74 +79,179 @@ button{
     width: 100%; 
     top: 20px;
 }
-
+.photo-instructor{
+    width: 150px;
+    height: 150px;
 }
-@media only screen and (max-width: 549px) and (min-width: 400px), only screen and (max-width: 399px) and (min-width: 340px), only screen and (max-width: 240px){
-.navbar-list{
-   display: none;
-}
-
-.painel-1, .painel-2, .painel-3, .painel-4{
-    display: none;
-}
-
-#slider #dragon, #slider #tiger, #slider #taichi, #slider #wing{
-    width: 270px;
-    height: 220px; 
-    left: 70px;
-    top: 25%;
-} 
-.title-sul{
-    font-size: 30px;
-    left: 90px;
-}
-#slider #dragon-banner, #slider #tiger-banner, #slider #taichi-banner, #slider #wing-banner{
-    width: 90%; 
-    height: 55%; 
-    position: absolute; 
-    right: 5px;
-    top: 150px;
-}
-.left-bar{
-    top: 130px; 
-    left: 0px; 
-    height: 400px; 
-    width: 200px;
-}
-.dragon-btn, .imgButtonDragon{
-    top: 150px;
-} 
-.tiger-btn, .imgButtonTiger{
-    top: 220px;
-} 
-.taichi-btn, .imgButtonTaichi{
-    top: 290px;
-} 
-.wing-btn, .imgButtonWing{
-    top: 360px;
-}
-@keyframes onActiveTitle{
-   0%{
-    transform: translateX(10px)
+.textbory{ 
+    font-family: dream; 
+    font-size: 13px; 
+    font-weight: 200; 
+    margin: 0px 1px 0px 1px;
     }
-   100%{
-    transform: translateX(0px)
-   }
-}
-.navbar-list-mobile{
-    left: 25px;
-    width: 100%; 
-    top: 20px;
-}
+    .blush{
+        width: 90px;
+        height: 90px;
+        opacity: .5;
+    }
+    h1{
+        font-size: 30px;
+    }
+    h4, h3{
+        font-size: 27px;
+    }
+    .logo-footer{
+        width: 130px;
+        margin-bottom: -30px;
+    }
+    
+    .social-style{
+        display: flex; 
+        flex-direction: column;
+        align-items: flex-start;
+         position: absolute; 
+         top: 218rem;
+         margin-left: -50px; 
+        }
+    
+    .img-footer{
+        width: 100%; 
+        height: 70%;
+        position: absolute; 
+        z-index: -2; 
+        top: 216rem;
+       }
+       .base{
+        align-items: 
+        center; display: 
+        flex;flex-direction: column; 
+        width: 100%; 
+        height: 100%; 
+        text-align: center; 
+        margin: 0px;
+    }
+    .base li{
+        font-size: 15px;
+    }
+    #footer{
+        width: 100vh;
+    }
 
+}
+/*-------------------Tela smartphone---------------------*/
+@media only screen and (max-width: 549px) and (min-width: 400px), only screen and (max-width: 399px) and (min-width: 340px), only screen and (max-width: 240px){
+    .navbar-list{
+    display: none;
+    }
 
+    .painel-1, .painel-2, .painel-3, .painel-4{
+        display: none;
+    }
+
+    #slider #dragon, #slider #tiger, #slider #taichi, #slider #wing{
+        width: 270px;
+        height: 220px; 
+        left: 70px;
+        top: 25%;
+    } 
+    .title-sul{
+        font-size: 30px;
+        left: 90px;
+    }
+    #slider #dragon-banner, #slider #tiger-banner, #slider #taichi-banner, #slider #wing-banner{
+        width: 90%; 
+        height: 55%; 
+        position: absolute; 
+        right: 5px;
+        top: 150px;
+    }
+    .left-bar{
+        top: 130px; 
+        left: 0px; 
+        height: 400px; 
+        width: 200px;
+    }
+    .dragon-btn, .imgButtonDragon{
+        top: 150px;
+    } 
+    .tiger-btn, .imgButtonTiger{
+        top: 220px;
+    } 
+    .taichi-btn, .imgButtonTaichi{
+        top: 290px;
+    } 
+    .wing-btn, .imgButtonWing{
+        top: 360px;
+    }
+    @keyframes onActiveTitle{
+    0%{
+        transform: translateX(10px)
+        }
+    100%{
+        transform: translateX(0px)
+    }
+    }
+    .navbar-list-mobile{
+        left: 25px;
+        width: 100%; 
+        top: 20px;
+    }
+
+    .photo-instructor{
+        width: 200px;
+        height: 200px;
+    }
+
+    .textbory{
+        font-size: 12px;
+        margin: 0px; 
+        font-family: dream; 
+        font-weight: 200;
+    }
+    .blush{
+        width: 90px;
+        height: 90px;
+        opacity: .3;
+    }
+    h1{
+        font-size: 27px;
+    }
+    h4, h3{
+        font-size: 20px;
+    }
+   footer{
+    width: 100vh;
+    }
+
+    .logo-footer{
+        width: 90px;
+    }
+    .social-style{
+        display: flex; 
+        position: absolute; 
+        top: 227rem; 
+        left: 50px;
+        padding-left: 17%;
+    }
+    .img-footer{
+        width: 100%; 
+        height: 70%;
+        position: absolute; 
+        z-index: -2; 
+        top: 227rem;
+       }
+       .base{
+        align-items: 
+        center; display: 
+        flex;flex-direction: column; 
+        width: 100%; 
+        height: 100%; 
+        text-align: center; 
+        margin: 0px;
+    }
 }
-@media (max-width: 1250px){
-.master-list, .contact-list, #arrowId{
- margin-left: auto;
-}
-}
-@media (min-width: 800px){
+/*-------------------Tela pc---------------------*/
+@media (min-width: 1000px){
 .navbar-list{
     display: flex;
 }
@@ -212,8 +317,54 @@ button{
     transform: translateX(0px)
    }
 }
+.photo-instructor{
+    width: 250px;
+    height: 250px;
 }
-
+.textbory{
+    margin-top: 90px; 
+    font-family: dream; 
+    font-size: 17px; 
+    font-weight: 200; 
+    margin: 0px 40px 0px 40px;
+    }
+    .blush{
+        width: 10%px;
+        height: 10%px;
+        opacity: .5;
+    }
+    .logo-footer{
+        width: 20%;
+        height: auto;
+     }
+     .social-style{
+        display: flex; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 217rem; 
+        left: 50px;
+    }
+    .base{
+        align-items: 
+        center; display: 
+        flex;flex-direction: column; 
+        width: 100%; 
+        height: 100%; 
+        text-align: center; 
+        margin: 0px;
+    }
+     .img-footer{
+      width: 100%; 
+      height: 70%;
+      position: absolute; 
+      z-index: -2; 
+      top: 213.5rem;
+     }
+     #footer{
+         width: 100vh;
+     }
+}
+/* fim da responsividade */
 .active{
     animation: onActive 2s;
     visibility: visible;
@@ -467,4 +618,12 @@ h1{
     color: #DAA520;
     font-family: dream;
 }
-
+/* footer */
+.list-footer{
+    text-shadow: 2px 2px 1.7px #000000; 
+    cursor: pointer; 
+    font-size: 20px; 
+    list-style: none; 
+    font-family: dream; 
+    color: #DAA520;
+}
