@@ -44,7 +44,7 @@ new Vue({
         textFilo:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque esse molestias sunt officiis eum voluptates amet impedit quia iure, aliquid laudantium sit doloremque iste quaerat at nemo culpa iusto eaque.",
         galery: "Galeria",
         warning: "Participe de uma aula grátis",
-        adressTitle: "Edereço",
+        adressTitle: "Endereço",
         adress: "Rua: Sem nome - Centro - Queimados - RJ",
            
     },
