@@ -36,11 +36,7 @@ button{
     top: 17%;
     left: 0%;
 }
-#instrutor{
-    margin-left: 50px; 
-    margin-top: 700px; 
-    font-family: dream;
-    }
+
 
 .dragon-btn, .imgButtonDragon{
     top: 150px;
@@ -69,12 +65,17 @@ button{
 }
 .down-bar{
     position: absolute; 
-    width: 100%;
+    width: 90%;
     height: 50px; 
     z-index: 1;
     left: 5%;
     top: 78%;
 }
+#instrutor{
+    margin-left: 50px; 
+    margin-top: 700px; 
+    font-family: dream;
+    }
 .photo-instructor{
     width: 150px;
     height: 150px;
@@ -94,11 +95,12 @@ button{
         font-size: 30px;
     }
     h4, h3{
-        font-size: 27px;
+        font-size: 23px;
     }
     .logo-footer{
         width: 130px;
         margin-bottom: -30px;
+        margin-top: 57px;
     }
     
     .social-style{
@@ -143,11 +145,7 @@ button{
     top: 17%;
     left: 0%;
 }
-#instrutor{
-margin-left: 50px; 
-margin-top: 700px; 
-font-family: dream;
-}
+
 .dragon-btn, .imgButtonDragon{
     top: 150px;
 } 
@@ -175,12 +173,17 @@ font-family: dream;
 }
 .down-bar{
     position: absolute; 
-    width: 100%;
+    width: 90%;
     height: 50px; 
     z-index: 1;
     left: 5%;
     top: 88%;
 }
+#instrutor{
+    margin-left: 50px; 
+    margin-top: 700px; 
+    font-family: dream;
+    }
 .photo-instructor{
     width: 150px;
     height: 150px;
@@ -318,6 +321,7 @@ font-family: dream;
 
     .logo-footer{
         width: 90px;
+        margin-top: 50px;
     }
     .social-style{
         display: flex; 
@@ -331,7 +335,7 @@ font-family: dream;
         margin: 20px;
     }
        .base li{
-     font-size: 10px;
+     font-size: 15px;
     }
 
 }
@@ -697,10 +701,10 @@ h1{
 
 #title-style{
     position: absolute;
-    z-index: 20;
+    z-index: 4;
     width: 50%;
     margin: 0;
-    left: -7%;
+    left: -1%;
     top: 25%;
 }
 #slider #banner{
