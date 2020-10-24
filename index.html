@@ -99,8 +99,8 @@
 
          <div class="banner" style="width: 100vh; height: 100%;">
          
-                  <img src="assets/img/background-img-header.png" alt="" style="width: 100%;height: 200px;position: absolute; left: 0;top: 0px;z-index: 2;">
-                  <h1 class="title-sul" style="width: 70%; height: 33rem; position: absolute; z-index: 3; top: 110px; color: #DAA520;">Estilo Shaolin Sul</h1>
+                  <img class="top-banner" src="assets/img/background-img-header.png" alt="">
+                  
             <div id="slider">   
                
                       <img id="banner" :class="showBanner" src="assets/img/fundo_dragao.png" alt="" >
@@ -114,22 +114,19 @@
                
                        <img id="banner" :class="showBanner4" src="assets/img/fundo_wingchun.png" alt="" >
                        <img id="title-style" :class="showTitle4" src="assets/img/palavra wing chun.png" alt="">
-                
+                       
             </div> 
-            
-                  <img class="left-bar" src="assets/img/barra.png" style="position: absolute;" alt="">
-            
-                  <button class="dragon-btn" style="width: 40px; height: 40px; position: absolute; left: 20px; opacity: 0; z-index: 2;" @click="onClick()" ></button><img id="imgButton" class="imgButtonDragon" :class="rotate1" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px;">
-                  <button class="tiger-btn" style="width: 40px; height: 40px; position: absolute; left: 20px;  opacity: 0; z-index: 2;" @click="onClick2()"></button><img id="imgButton" class="imgButtonTiger" :class="rotate2" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px;">
-                  <button class="taichi-btn" style="width: 40px; height: 40px; position: absolute; left: 20px; opacity: 0; z-index: 2;"  @click="onClick3()"></button><img id="imgButton" class="imgButtonTaichi" :class="rotate3" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px; ">
-                  <button class="wing-btn" style="width: 40px; height: 40px; position: absolute; left: 20px;  opacity: 0; z-index: 2;" @click="onClick4()"></button><img id="imgButton" class="imgButtonWing" :class="rotate4" src="assets/img/Taichi.png" alt="" style="position: absolute; left: 20px;">
-            
+                  <button class="dragon-btn" style="position: absolute; width: 40px; height: 40px; background-color: rgb(0, 0, 0, 0); border: none; outline: none;" @click="onClick()" ><img id="imgButton" :class="rotate1" src="assets/img/Taichi.png" alt=""></button>
+                  <button class="tiger-btn" style="position: absolute; width: 40px; height: 40px;  background-color: rgb(0, 0, 0, 0); border: none; outline: none;" @click="onClick2()"><img id="imgButton" :class="rotate2" src="assets/img/Taichi.png" alt=""></button>
+                  <button class="taichi-btn" style="position: absolute; width: 40px; height: 40px;  background-color: rgb(0, 0, 0, 0); border: none; outline: none;"  @click="onClick3()"><img id="imgButton" :class="rotate3" src="assets/img/Taichi.png" alt=""></button>
+                  <button class="wing-btn" style="position: absolute; width: 40px; height: 40px;  background-color: rgb(0, 0, 0, 0); border: none; outline: none;" @click="onClick4()"><img id="imgButton" :class="rotate4" src="assets/img/Taichi.png" alt="" ></button>
+        
           </div>
         </header>
         <section class="container">
             
-            <div class="instructors-section" style="margin-top: 36rem; align-items: center;">
-                <img class="down-bar" src="assets/img/barra_horizontal.png" alt="">
+            <div class="instructors-section">
+               
                 <h3 id="instrutor">{{subTitle}}</h3>
                
                 <hr style="border-color: black;">
@@ -190,7 +187,7 @@
                  <h4 style="font-size: 30px; font-family: poetsen; margin-bottom: 20px;">{{filosophys}}</h4>
                  <p style="font-family: dream; font-size: 20px;">{{textFilo}}</p>
                  <br>
-                <img style="position: relative; width: 80%; height: 30%; top: -20px;" src="assets/img/barra_horizontal.png" alt="">
+                <img style="position: relative; width: 80%; height: 10%;" src="assets/img/barra2_horizontal.png" alt="">
                 </div>
            <div style="text-align: center; height: 500px; width: 100%; display: inline ; align-items: center;"  >
                <h3 style="font-family: dream;">{{galery}}</h3>

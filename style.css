@@ -26,28 +26,16 @@ button{
     display: none;
 }
 
-.title-sul{
-    left: 130px;
-}
-.left-bar{
-    position: relative;
-    height: 65%;
-    width: 15%;
-    top: 17%;
-    left: 0%;
-}
-
-
-.dragon-btn, .imgButtonDragon{
+.dragon-btn{
     top: 150px;
 } 
-.tiger-btn, .imgButtonTiger{
+.tiger-btn{
     top: 220px;
 } 
-.taichi-btn, .imgButtonTaichi{
+.taichi-btn{
     top: 290px;
 } 
-.wing-btn, .imgButtonWing{
+.wing-btn{
     top: 360px;
 }
 @keyframes onActiveTitle{
@@ -63,14 +51,7 @@ button{
     width: 100%; 
     top: 20px;
 }
-.down-bar{
-    position: absolute; 
-    width: 90%;
-    height: 50px; 
-    z-index: 1;
-    left: 5%;
-    top: 78%;
-}
+
 #instrutor{
     margin-left: 50px; 
     margin-top: 700px; 
@@ -135,27 +116,17 @@ button{
     display: none;
 }
 
-.title-sul{
-    left: 130px;
-}
-.left-bar{
-    position: relative;
-    height: 65%;
-    width: 15%;
-    top: 17%;
-    left: 0%;
-}
 
-.dragon-btn, .imgButtonDragon{
+.dragon-btn{
     top: 150px;
 } 
-.tiger-btn, .imgButtonTiger{
+.tiger-btn{
     top: 220px;
 } 
-.taichi-btn, .imgButtonTaichi{
+.taichi-btn{
     top: 290px;
 } 
-.wing-btn, .imgButtonWing{
+.wing-btn{
     top: 360px;
 }
 @keyframes onActiveTitle{
@@ -242,40 +213,76 @@ button{
     .painel-1, .painel-2, .painel-3, .painel-4{
         display: none;
     }
+    .top-banner{
+        width: 100%;height: 15%;
+        position: absolute; left: 0;
+        top: 0px;
+        z-index: 2;
+    }
+    
+#slider{
+    position: absolute;
+    width: 70%;
+    height: 55%;
+    top: -3%;
+    left: 15%;
+    padding: 0;
+    background-image: url(assets/img/barra_horizontal.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+}
 
-    .title-sul{
-        font-size: 25px;
-        left: 25%;
-        top: 10%;
-    }
-    .left-bar{
-        position: relative;
-        height: 60%;
-        width: 15%;
-        top: 17%;
-        left: 0%;
-    }
-    .dragon-btn, .imgButtonDragon{
-        top: 150px;
+#title-style{
+    position: absolute;
+    z-index: 4;
+    width: 50%;
+    margin: 0;
+    left: -17%;
+    top: 35%;
+}
+#slider #banner{
+    position: absolute;
+    top: 25%;
+    right: -15%;
+    width: 120%; 
+    height: 80%; 
+    object-fit: scale-down;
+}
+  
+    .dragon-btn{
+        top: 340px;
+        left: 40%;
     } 
-    .tiger-btn, .imgButtonTiger{
-        top: 220px;
+    .tiger-btn{
+        top: 340px;
+        left: 50%;
     } 
-    .taichi-btn, .imgButtonTaichi{
-        top: 290px;
+    .taichi-btn{
+        top: 340px;
+        left: 60%;
     } 
-    .wing-btn, .imgButtonWing{
-        top: 360px;
+    .wing-btn{
+        top: 340px;
+        left: 70%;
     }
-    .down-bar{
-        position: relative; 
-        width: 100%;
-        height: 50px; 
-        z-index: 1;
-        left: 5%;
-        margin-top: -30%;
+    .activeButton{
+        width: 30px; 
+        height: 30px;
+        transform: rotate(180deg)
     }
+    .inactiveButton{
+        width: 20px; 
+        height: 20px;
+        transform: rotate(0deg)
+    }
+    .instructors-section{
+        margin-top: 25rem; 
+        align-items: center;
+    }
+   
     #instrutor{
+        margin-top: 100px;
         margin-left: 50px; 
         font-family: dream;
         }
@@ -337,7 +344,21 @@ button{
        .base li{
      font-size: 12px;
     }
-
+    .base{
+        background-image: url(assets/img/background-img-footer.png);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        position: absolute;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        margin-top: 200px;
+        padding: 0;
+        left: 0;
+    }
 }
 /*-------------------Tela pc---------------------*/
 @media (min-width: 1000px){
@@ -358,37 +379,70 @@ button{
      display: none;
   }
 
-.title-sul{
-    
-        font-size: 50px;
-        left: 15%;
-    
+.top-banner{
+    width: 100%;height: 25%;
+    position: absolute; left: 0;
+    top: 0px;
+    z-index: 2;
 }
-.left-bar{
-    position: relative;
-    height: 90%;
-    width: 10%;
-    top: 15%;
-    left: 0%;
+  #slider{
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    top: 13%;
+    left: 15%;
+    padding: 0;
+    background-image: url(assets/img/barra_horizontal.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
 }
-.dragon-btn, .imgButtonDragon{
-    top: 250px;
-} 
-.tiger-btn, .imgButtonTiger{
-    top: 320px;
-} 
-.taichi-btn, .imgButtonTaichi{
-    top: 390px;
-} 
-.wing-btn, .imgButtonWing{
-    top: 460px;
+
+#title-style{
+    position: absolute;
+    z-index: 4;
+    width: 50%;
+    margin: 0;
+    left: -17%;
+    top: 5%;
 }
-.down-bar{
-    position: relative; 
-    width: 100%;
-    height: 100px; 
-    z-index: 1;
-    margin-top: 3%;
+#slider #banner{
+    position: absolute;
+    top: 13%;
+    right: -15%;
+    width: 120%; 
+    height: 80%; 
+    object-fit: scale-down;
+}
+.dragon-btn{
+    top: 102%;
+    left: 50%;
+    z-index: 7;
+} 
+.tiger-btn{
+    top: 102%;
+    left: 55%;
+    z-index: 7;
+} 
+.taichi-btn{
+    top: 102%;
+    left: 60%;
+    z-index: 7;
+} 
+.wing-btn{
+    top: 102%;
+    left: 65%;
+    z-index: 7;
+}
+.activeButton{
+    width: 55px; 
+    height: 55px;
+    transform: rotate(180deg)
+}
+.inactiveButton{
+    width: 40px; 
+    height: 40px;
+    transform: rotate(0deg)
 }
 
 @keyframes onActiveTitle{
@@ -399,9 +453,12 @@ button{
     transform: translateX(0px)
    }
 }
+.instructors-section{
+    margin-top: 55rem; 
+    align-items: center;
+}
 #instrutor{
     margin-left: 50px; 
-    margin-top: 30px;
     font-family: dream;
     }
 .photo-instructor{
@@ -439,6 +496,21 @@ button{
      #footer{
          width: 100vh;
      }
+     .base{
+        background-image: url(assets/img/background-img-footer.png);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        position: absolute;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        margin: 0px;
+        padding: 0;
+        left: 0;
+    }
 }
 /* fim da responsividade */
 .active{
@@ -495,16 +567,7 @@ button{
    }
       
 }
-.activeButton{
-    width: 55px; 
-    height: 55px;
-    transform: rotate(180deg)
-}
-.inactiveButton{
-    width: 40px; 
-    height: 40px;
-    transform: rotate(0deg)
-}
+
 .navbar{
     display: flex;
     align-items: center;
@@ -690,32 +753,6 @@ h1{
     text-shadow: 2px 4px 2px rgba(0, 0, 0, .8);
 }
 
-#slider{
-    position: absolute;
-    top: 15%;
-    left: 15%;
-    width: 70%;
-    height: 50%;
-    padding: 0;
-}
-
-#title-style{
-    position: absolute;
-    z-index: 4;
-    width: 50%;
-    margin: 0;
-    left: -1%;
-    top: 25%;
-}
-#slider #banner{
-    position: absolute;
-    top: 15%;
-    right: -20%;
-    width: 120%; 
-    height: 140%; 
-    object-fit: scale-down;
-}
-
 /*----Galeria-------*/
 #btn-galery{
     color: #DAA520;
@@ -730,18 +767,4 @@ h1{
     font-family: dream; 
     color: #DAA520;
 }
-.base{
-    background-image: url(assets/img/background-img-footer.png);
-    background-position: bottom;
-    background-repeat: no-repeat;
-    position: absolute;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    margin: 0px;
-    padding: 0;
-    left: 0;
-}
+
