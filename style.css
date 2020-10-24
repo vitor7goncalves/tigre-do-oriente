@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+body{
+    overflow-x: hidden;
+}
 @font-face {
     font-family: dream;
     src:  local(dream\ orphans), url(assets/font/dream_orphans/dream\ orphans.ttf);
@@ -64,19 +67,19 @@ flex-direction: row;
 }
 
 .dragon-btn{
-    top: 540px;
+    top: 520px;
     left: 40%;
 } 
 .tiger-btn{
-    top: 540px;
+    top: 520px;
     left: 50%;
 } 
 .taichi-btn{
-    top: 540px;
+    top: 520px;
     left: 60%;
 } 
 .wing-btn{
-    top: 540px;
+    top: 520px;
     left: 70%;
 }
 .activeButton{
@@ -543,11 +546,8 @@ flex-direction: row;
     position: absolute;
     top: 13%;
     right: -15%;
-    max-width: 120%; 
-    min-width: 100%;
-    
-    min-height: 90%; 
-    object-fit: scale-down;
+    width: 120%;
+    height: 550px; 
 }
 .dragon-btn{
     top: 107%;
@@ -589,7 +589,7 @@ flex-direction: row;
    }
 }
 .instructors-section{
-    margin-top: 55rem; 
+    margin-top: 51rem; 
     align-items: center;
 }
 #instrutor{
