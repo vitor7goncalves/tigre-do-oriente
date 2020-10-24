@@ -198,7 +198,7 @@ flex-direction: row;
 #slider{
 position: absolute;
 width: 70%;
-height: 100%;
+height: 97%;
 top: -15%;
 left: 15%;
 padding: 0;
@@ -214,33 +214,30 @@ z-index: 4;
 width: 50%;
 margin: 0;
 left: -17%;
-top: 35%;
+top: 45%;
 }
 #slider #banner{
 position: absolute;
 top: 35%;
-left: 0%;
-max-width: 100%; 
-min-width: 90%;
+left: -10%;
+width: 123%; 
 height: 60vh; 
-flex-direction: row;
-
 }
 
 .dragon-btn{
-    top: 540px;
+    top: 530px;
     left: 40%;
 } 
 .tiger-btn{
-    top: 540px;
+    top: 530px;
     left: 50%;
 } 
 .taichi-btn{
-    top: 540px;
+    top: 530px;
     left: 60%;
 } 
 .wing-btn{
-    top: 540px;
+    top: 530px;
     left: 70%;
 }
 .activeButton{
