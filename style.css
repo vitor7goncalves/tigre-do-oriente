@@ -22,21 +22,72 @@ button{
 .navbar-list{
    display: none;
 }
-.painel-1, .painel-2, .painel-3, .painel-4{
-    display: none;
+
+.top-banner{
+    width: 100%;
+    height: 20%;
+    position: absolute; left: 0;
+    top: 0px;
+    z-index: 2;
+}
+
+#slider{
+position: absolute;
+width: 70%;
+height: 97%;
+top: -15%;
+left: 15%;
+padding: 0;
+background-image: url(assets/img/barra_horizontal.png);
+background-repeat: no-repeat;
+background-position: bottom;
+background-size: 100%;
+}
+
+#title-style{
+position: absolute;
+z-index: 4;
+width: 50%;
+margin: 0;
+left: -17%;
+top: 35%;
+}
+#slider #banner{
+position: absolute;
+top: 35%;
+left: 0%;
+max-width: 100%; 
+min-width: 90%;
+height: 60vh; 
+flex-direction: row;
+
 }
 
 .dragon-btn{
-    top: 150px;
+    top: 540px;
+    left: 40%;
 } 
 .tiger-btn{
-    top: 220px;
+    top: 540px;
+    left: 50%;
 } 
 .taichi-btn{
-    top: 290px;
+    top: 540px;
+    left: 60%;
 } 
 .wing-btn{
-    top: 360px;
+    top: 540px;
+    left: 70%;
+}
+.activeButton{
+    width: 30px; 
+    height: 30px;
+    transform: rotate(180deg)
+}
+.inactiveButton{
+    width: 20px; 
+    height: 20px;
+    transform: rotate(0deg)
 }
 @keyframes onActiveTitle{
    0%{
@@ -51,10 +102,13 @@ button{
     width: 100%; 
     top: 20px;
 }
+.instructors-section{
+    margin-top: 39rem; 
+    align-items: center;
+}
 
 #instrutor{
     margin-left: 50px; 
-    margin-top: 700px; 
     font-family: dream;
     }
 .photo-instructor{
@@ -105,7 +159,21 @@ button{
     #footer{
         width: 100vh;
     }
-
+    .base{
+        background-image: url(assets/img/background-img-footer.png);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        position: absolute;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        margin: 0px;
+        padding: 0;
+        left: 0;
+    }
 }
 /*--------------------- tablet 2----------------------------------*/
 @media only screen and (max-width: 999px) and (min-width: 740.5px){
@@ -116,18 +184,71 @@ button{
     display: none;
 }
 
+.top-banner{
+    width: 100%;
+    height: 20%;
+    position: absolute; left: 0;
+    top: 0px;
+    z-index: 2;
+}
+
+#slider{
+position: absolute;
+width: 70%;
+height: 100%;
+top: -15%;
+left: 15%;
+padding: 0;
+background-image: url(assets/img/barra_horizontal.png);
+background-repeat: no-repeat;
+background-position: bottom;
+background-size: 100%;
+}
+
+#title-style{
+position: absolute;
+z-index: 4;
+width: 50%;
+margin: 0;
+left: -17%;
+top: 35%;
+}
+#slider #banner{
+position: absolute;
+top: 35%;
+left: 0%;
+max-width: 100%; 
+min-width: 90%;
+height: 60vh; 
+flex-direction: row;
+
+}
 
 .dragon-btn{
-    top: 150px;
+    top: 540px;
+    left: 40%;
 } 
 .tiger-btn{
-    top: 220px;
+    top: 540px;
+    left: 50%;
 } 
 .taichi-btn{
-    top: 290px;
+    top: 540px;
+    left: 60%;
 } 
 .wing-btn{
-    top: 360px;
+    top: 540px;
+    left: 70%;
+}
+.activeButton{
+    width: 30px; 
+    height: 30px;
+    transform: rotate(180deg)
+}
+.inactiveButton{
+    width: 20px; 
+    height: 20px;
+    transform: rotate(0deg)
 }
 @keyframes onActiveTitle{
    0%{
@@ -142,17 +263,14 @@ button{
     width: 100%; 
     top: 20px;
 }
-.down-bar{
-    position: absolute; 
-    width: 90%;
-    height: 50px; 
-    z-index: 1;
-    left: 5%;
-    top: 88%;
+
+.instructors-section{
+    margin-top: 39rem; 
+    align-items: center;
 }
+
 #instrutor{
     margin-left: 50px; 
-    margin-top: 700px; 
     font-family: dream;
     }
 .photo-instructor{
@@ -201,6 +319,21 @@ button{
     }
     #footer{
         width: 100vh;
+    }
+    .base{
+        background-image: url(assets/img/background-img-footer.png);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        position: absolute;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        margin: 0px;
+        padding: 0;
+        left: 0;
     }
 
 }
@@ -410,28 +543,30 @@ button{
     position: absolute;
     top: 13%;
     right: -15%;
-    width: 120%; 
-    height: 80%; 
+    max-width: 120%; 
+    min-width: 100%;
+    
+    min-height: 90%; 
     object-fit: scale-down;
 }
 .dragon-btn{
-    top: 102%;
-    left: 50%;
+    top: 107%;
+    left: 40%;
     z-index: 7;
 } 
 .tiger-btn{
-    top: 102%;
-    left: 55%;
+    top: 107%;
+    left: 50%;
     z-index: 7;
 } 
 .taichi-btn{
-    top: 102%;
+    top: 107%;
     left: 60%;
     z-index: 7;
 } 
 .wing-btn{
-    top: 102%;
-    left: 65%;
+    top: 107%;
+    left: 70%;
     z-index: 7;
 }
 .activeButton{
