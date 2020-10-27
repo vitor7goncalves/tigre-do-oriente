@@ -2,9 +2,9 @@
     margin: 0;
     padding: 0;
 }
-body{
+ body{
     overflow-x: hidden;
-}
+} 
 @font-face {
     font-family: dream;
     src:  local(dream\ orphans), url(assets/font/dream_orphans/dream\ orphans.ttf);
@@ -513,22 +513,15 @@ height: 60vh;
   }
 
 .top-banner{
-    width: 100%;height: 25%;
-    position: absolute; left: 0;
-    top: 0px;
-    z-index: 2;
+    width: 200%;
+    position: relative; 
+    margin-left: -23%;
 }
   #slider{
-    position: absolute;
-    width: 70%;
+    position: relative;
+    width: 100%;
     height: 100%;
-    top: 13%;
-    left: 15%;
-    padding: 0;
-    background-image: url(assets/img/barra_horizontal.png);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 100%;
+    margin: 0% 0% 0% 15%;
 }
 
 #title-style{
@@ -540,11 +533,12 @@ height: 60vh;
     top: 5%;
 }
 #slider #banner{
-    position: absolute;
-    top: 13%;
-    right: -15%;
-    width: 120%;
-    height: 550px; 
+    object-fit: cover;
+}
+.down-bar{
+    position: relative;
+    width: 135%;
+    margin-left: 5%;
 }
 .dragon-btn{
     top: 107%;
@@ -586,7 +580,6 @@ height: 60vh;
    }
 }
 .instructors-section{
-    margin-top: 51rem; 
     align-items: center;
 }
 #instrutor{
@@ -612,7 +605,7 @@ height: 60vh;
     .logo-footer{
         width: 15%;
         height: auto;
-        margin-bottom: 20px;
+        margin: 5% 0% 5% 0%;
      }
      .social-style{
         display: flex; 
@@ -627,27 +620,27 @@ height: 60vh;
     }
      #footer{
          width: 100vh;
+         padding: 0;
      }
      .base{
         background-image: url(assets/img/background-img-footer.png);
         background-position: bottom;
         background-repeat: no-repeat;
-        position: absolute;
+        position: relative;
         align-items: center;
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 194%;
         height: 100%;
         text-align: center;
-        margin: 0px;
+        margin: 20% 0% 0% -47%;
         padding: 0;
-        left: 0;
     }
 }
 /* fim da responsividade */
 .active{
     animation: onActive 2s;
-    visibility: visible;
+    display: block;
     opacity: 1;
 }
 .activeTitle{
@@ -657,18 +650,18 @@ height: 60vh;
 }
 @keyframes onActive{
    0%{
-    visibility: hidden;
+    display: none;
     opacity: 0;
     }
    100%{
-        visibility: visible;
+        display: block;
         opacity: 1;
    }
 }
 
 .inactive{
    animation: onInactive 2s;
-   visibility: hidden;
+   display: none;
    opacity: 0;
 }
 .inactiveTitle{
@@ -678,11 +671,11 @@ height: 60vh;
 }
 @keyframes onInactive{
     0%{
-    visibility: visible;
+    display: block;
     opacity: 1;
     }
    100%{
-        visibility: hidden;
+        display: none;
         opacity: 0;
    }
 }
